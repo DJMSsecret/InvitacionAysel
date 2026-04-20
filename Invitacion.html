@@ -142,15 +142,37 @@
         /* ===================================================
            PÁGINA 0 — VIDEO HERO (ayselcorazon.mp4)
         =================================================== */
-        #page0 { padding: 0; }
+        #page0 {
+            padding: 0;
+            background: #1a0a0c;
+        }
 
-        .hero-video {
+        /* Contenedor centrado que limita el ancho del video en desktop */
+        .hero-video-wrapper {
             position: absolute;
             inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
             z-index: 0;
+        }
+
+        .hero-video {
+            height: 100%;
+            width: auto;
+            max-width: 100%;
+            object-fit: contain;
+            z-index: 0;
+        }
+
+        /* En móvil sí ocupa todo el ancho */
+        @media (max-width: 500px) {
+            .hero-video {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
         }
 
         /* Overlay oscuro suave para que el texto resalte */
@@ -159,9 +181,9 @@
             inset: 0;
             background: linear-gradient(
                 to bottom,
-                rgba(253,246,247,0.15) 0%,
-                rgba(226,133,142,0.25) 50%,
-                rgba(253,246,247,0.85) 100%
+                rgba(253,246,247,0.10) 0%,
+                rgba(226,133,142,0.20) 50%,
+                rgba(253,246,247,0.80) 100%
             );
             z-index: 1;
         }
@@ -436,6 +458,38 @@
         .rsvp-btn:hover, .rsvp-btn:active { background: #FAE2E5; }
         .parent-name { font-weight: 600; color: #E2858E; }
         .whatsapp-icon { width: 20px; height: 20px; fill: #4FCE5D; }
+
+        /* ===== BOTÓN DE MÚSICA ===== */
+        .music-btn {
+            position: fixed;
+            bottom: 24px;
+            right: 20px;
+            z-index: 999;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.85);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(226,133,142,0.4);
+            box-shadow: 0 4px 18px rgba(226,133,142,0.3);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            animation: pulseBtn 2.5s ease-in-out infinite;
+        }
+        .music-btn:active { transform: scale(0.92); }
+        @keyframes pulseBtn {
+            0%, 100% { box-shadow: 0 4px 18px rgba(226,133,142,0.3); }
+            50%       { box-shadow: 0 4px 28px rgba(226,133,142,0.6); }
+        }
+        .music-btn.playing { animation: pulseBtn 2.5s ease-in-out infinite, spinNote 4s linear infinite; }
+        @keyframes spinNote {
+            from { transform: rotate(0deg); }
+            to   { transform: rotate(360deg); }
+        }
     </style>
 </head>
 <body>
@@ -446,9 +500,11 @@
          PÁGINA 0 — VIDEO HERO: ayselcorazon.mp4
     ============================================= -->
     <section class="page" id="page0">
-        <video class="hero-video" autoplay muted loop playsinline>
-            <source src="Imagenes/ambos.mp4" type="video/mp4">
-        </video>
+        <div class="hero-video-wrapper">
+            <video class="hero-video" autoplay muted loop playsinline>
+                <source src="Imagenes/ambos.mp4" type="video/mp4">
+            </video>
+        </div>
         <div class="hero-overlay"></div>
 
         <div class="hero-content">
@@ -583,6 +639,13 @@
 
 </div>
 
+<!-- ===== MÚSICA DE FONDO ===== -->
+<audio id="bgMusic" loop preload="auto">
+    <source src="Sonido/musica.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music-btn" id="musicBtn" title="Música" aria-label="Activar música">🎵</button>
+
 <script>
     // ===== SCROLL REVEAL =====
     function reveal() {
@@ -621,6 +684,44 @@
                 "<p style='color:#E2858E;font-weight:600;font-size:1.5rem;'>¡El día ha llegado! 🎉</p>";
         }
     }, 1000);
+
+    // ===== MÚSICA DE FONDO =====
+    const music   = document.getElementById('bgMusic');
+    const musicBtn = document.getElementById('musicBtn');
+    let   playing  = false;
+
+    // Intento de autoplay al primer toque/clic en cualquier parte
+    function tryAutoplay() {
+        if (!playing) {
+            music.volume = 0.5;
+            music.play().then(() => {
+                playing = true;
+                musicBtn.textContent = '🎵';
+                musicBtn.classList.add('playing');
+            }).catch(() => {});
+        }
+        document.removeEventListener('touchstart', tryAutoplay);
+        document.removeEventListener('click', tryAutoplay);
+    }
+    document.addEventListener('touchstart', tryAutoplay, { once: true });
+    document.addEventListener('click', tryAutoplay, { once: true });
+
+    // Botón manual para silenciar / reanudar
+    musicBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        if (playing) {
+            music.pause();
+            playing = false;
+            musicBtn.textContent = '🔇';
+            musicBtn.classList.remove('playing');
+        } else {
+            music.volume = 0.5;
+            music.play();
+            playing = true;
+            musicBtn.textContent = '🎵';
+            musicBtn.classList.add('playing');
+        }
+    });
 </script>
 
 </body>
