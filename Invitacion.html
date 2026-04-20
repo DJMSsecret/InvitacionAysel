@@ -62,7 +62,8 @@
             filter: blur(20px);
             z-index: 0;
             animation: morph 8s ease-in-out infinite both alternate;
-            opacity: 0.7;
+            opacity: 0.5;
+            pointer-events: none;
         }
         .blob-1 { top: -10%; left: -20%; width: 300px; height: 300px; background: #fae2e5; }
         .blob-2 { bottom: -10%; right: -20%; width: 250px; height: 250px; background: #fdf1ed; animation-delay: 2s; }
@@ -333,6 +334,43 @@
             margin: 6px 0;
         }
 
+        /* Nombres de los papás */
+        .parents-names {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .parent-label {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2rem;
+            color: #C28C8A;
+            line-height: 1;
+        }
+        .parent-amp {
+            font-family: 'Great Vibes', cursive;
+            font-size: 1.4rem;
+            color: #D49A89;
+        }
+        .parent-heart {
+            font-size: 0.85rem;
+            color: #E2858E;
+            opacity: 0.7;
+        }
+
+        /* Video nítido — sin filtros que degraden calidad */
+        .card-aysel video {
+            image-rendering: auto;
+            will-change: transform;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+        }
+        .card-aysel {
+            box-shadow: 0 10px 30px rgba(226,133,142,0.28);
+            border: 2px solid rgba(255,255,255,0.6);
+        }
+
         /* ===== PÁGINA 2 ===== */
         .date-box {
             display: flex;
@@ -409,7 +447,7 @@
     ============================================= -->
     <section class="page" id="page0">
         <video class="hero-video" autoplay muted loop playsinline>
-            <source src="Imagenes/ayselcorazon.mp4" type="video/mp4">
+            <source src="Imagenes/ambos.mp4" type="video/mp4">
         </video>
         <div class="hero-overlay"></div>
 
@@ -436,7 +474,7 @@
             <!-- Video aysel.mp4 -->
             <div class="media-card card-aysel reveal">
                 <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;">
-                    <source src="Imagenes/aysel.mp4" type="video/mp4">
+                    <source src="Imagenes/ayselcorazon.mp4" type="video/mp4">
                 </video>
                 <span class="media-label">Aysel 🌸</span>
             </div>
@@ -454,6 +492,13 @@
                 <h1 class="baby-name reveal" style="transition-delay:0.5s;">Aysel</h1>
                 <div class="message-bubble reveal" style="transition-delay:0.6s;">
                     <p>La aventura más bonita está por comenzar...<br>Una nueva lucecita está a punto de iluminar nuestra familia. 🌸</p>
+                </div>
+                <div class="parents-names reveal" style="transition-delay:0.7s;">
+                    <span class="parent-heart">♡</span>
+                    <span class="parent-label">Dylan</span>
+                    <span class="parent-amp">&</span>
+                    <span class="parent-label">Lourdes</span>
+                    <span class="parent-heart">♡</span>
                 </div>
             </div>
 
@@ -474,7 +519,7 @@
     <section class="page" id="page2">
         <div class="blob blob-1" style="background: #fdf1ed;"></div>
         <div class="mobile-wrapper">
-            <h2 class="title reveal" style="color: #E2858E;">Contando los días para conocerla ✨</h2>
+            <h2 class="title reveal" style="color: #E2858E;">Contando los días para que nos acompañes en este dia especial✨</h2>
 
             <div class="date-box reveal" style="transition-delay: 0.2s;">
                 <div style="text-align: right;">
