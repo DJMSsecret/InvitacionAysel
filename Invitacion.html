@@ -459,6 +459,66 @@
         .parent-name { font-weight: 600; color: #E2858E; }
         .whatsapp-icon { width: 20px; height: 20px; fill: #4FCE5D; }
 
+        /* ===== BOTÓN PLAY INICIAL ===== */
+        .play-music-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 28px;
+            background: rgba(255,255,255,0.18);
+            backdrop-filter: blur(12px);
+            border: 1.5px solid rgba(255,255,255,0.5);
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: background 0.3s, transform 0.2s;
+            animation: fadeInUp 2.2s ease both;
+            position: relative;
+            overflow: hidden;
+        }
+        .play-music-btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(226,133,142,0.25);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .play-music-btn:hover::before,
+        .play-music-btn:active::before { opacity: 1; }
+        .play-music-btn:active { transform: scale(0.96); }
+
+        .play-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            animation: pulsePlay 1.8s ease-in-out infinite;
+        }
+        .play-icon svg { width: 14px; height: 14px; fill: #E2858E; margin-left: 2px; }
+        @keyframes pulsePlay {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(255,255,255,0.5); }
+            50%       { box-shadow: 0 0 0 8px rgba(255,255,255,0); }
+        }
+
+        /* Ocultar botón play una vez que la música arrancó */
+        .play-music-btn.hidden {
+            opacity: 0;
+            pointer-events: none;
+            transform: scale(0.8);
+            transition: opacity 0.5s, transform 0.5s;
+        }
+
         /* ===== BOTÓN DE MÚSICA ===== */
         .music-btn {
             position: fixed;
@@ -491,6 +551,8 @@
             to   { transform: rotate(360deg); }
         }
     </style>
+    <!-- Vercel Analytics -->
+    <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
 
@@ -511,6 +573,14 @@
             <span class="hero-tag">Baby Shower</span>
             <h1 class="hero-name">Aysel</h1>
             <p class="hero-sub">Una historia de amor está por comenzar</p>
+
+            <button class="play-music-btn" id="playMusicBtn">
+                <span class="play-icon">
+                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                </span>
+                Escucha nuestra canción
+            </button>
+
             <div class="hero-cta">
                 <span>Desliza para descubrir</span>
                 <span class="hero-cta-arrow">↓</span>
@@ -686,27 +756,31 @@
     }, 1000);
 
     // ===== MÚSICA DE FONDO =====
-    const music   = document.getElementById('bgMusic');
-    const musicBtn = document.getElementById('musicBtn');
-    let   playing  = false;
+    const music      = document.getElementById('bgMusic');
+    const musicBtn   = document.getElementById('musicBtn');
+    const playMusicBtn = document.getElementById('playMusicBtn');
+    let   playing    = false;
 
-    // Intento de autoplay al primer toque/clic en cualquier parte
-    function tryAutoplay() {
+    function startMusic() {
         if (!playing) {
             music.volume = 0.5;
             music.play().then(() => {
                 playing = true;
                 musicBtn.textContent = '🎵';
                 musicBtn.classList.add('playing');
+                // Ocultar el botón inicial
+                playMusicBtn.classList.add('hidden');
             }).catch(() => {});
         }
-        document.removeEventListener('touchstart', tryAutoplay);
-        document.removeEventListener('click', tryAutoplay);
     }
-    document.addEventListener('touchstart', tryAutoplay, { once: true });
-    document.addEventListener('click', tryAutoplay, { once: true });
 
-    // Botón manual para silenciar / reanudar
+    // Botón grande del hero
+    playMusicBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        startMusic();
+    });
+
+    // Botón flotante para silenciar / reanudar
     musicBtn.addEventListener('click', function(e) {
         e.stopPropagation();
         if (playing) {
