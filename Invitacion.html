@@ -3,33 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baby Shower de Luan</title>
+    <title>Nélida & Gustavo — Nuestra Boda</title>
 
-    <!-- Meta tags para previsualización en WhatsApp / redes sociales -->
-    <meta property="og:title" content="Baby Shower de Luan 🩵">
-    <meta property="og:description" content="¡Te invitamos a celebrar con nosotros este momento tan especial!">
-    <meta property="og:image" content="/Imagenes/Lourdes Huayllucu_/202605111648500037OB.JPG">
+    <!-- Meta tags para WhatsApp / redes sociales -->
+    <meta property="og:title" content="💍 Nélida & Gustavo — Nos casamos">
+    <meta property="og:description" content="Dos historias, un mismo destino y una vida para compartir. 05 · 06 Septiembre 2026">
+    <meta property="og:image" content="/Imagenes/JUNTOS.jpeg">
     <meta property="og:url" content="">
 
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
     <style>
         /* ===== RESET & BASE ===== */
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --olive:       #6B7C4A;
+            --sage:        #8A9A6A;
+            --eucalyptus:  #4E6B4A;
+            --ivory:       #FAF7F0;
+            --beige:       #F2EBD9;
+            --gold:        #B8965A;
+            --gold-light:  #D4AF72;
+            --dark-green:  #2E3D28;
+            --text-dark:   #2E3D28;
+            --text-mid:    #4A5A3A;
+            --text-soft:   #7A8A6A;
+            --white:       #FFFFFF;
+        }
+
         body, html {
             height: 100%;
             font-family: 'Montserrat', sans-serif;
-            background-color: #F0FAF6;
-            color: #2D4A3E;
+            background-color: var(--ivory);
+            color: var(--text-dark);
             overflow-x: hidden;
             scroll-behavior: smooth;
         }
+
         .container {
             height: 100vh;
             overflow-y: scroll;
             scroll-snap-type: y mandatory;
         }
+
         .page {
-            height: 100vh;
+            min-height: 100vh;
             width: 100%;
             scroll-snap-align: start;
             display: flex;
@@ -37,154 +56,194 @@
             justify-content: center;
             align-items: center;
             position: relative;
-            padding: 20px;
+            padding: 40px 20px;
             overflow: hidden;
+            background: var(--ivory);
         }
 
         /* ===== MOBILE WRAPPER ===== */
         .mobile-wrapper {
-            max-width: 450px;
+            max-width: 480px;
             width: 100%;
-            height: 100%;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
             text-align: center;
             position: relative;
             z-index: 10;
         }
 
-        /* ===== BLOBS ===== */
-        .blob {
-            position: absolute;
-            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
-            filter: blur(20px);
-            z-index: 0;
-            animation: morph 8s ease-in-out infinite both alternate;
-            opacity: 0.5;
-            pointer-events: none;
-        }
-        .blob-1 { top: -10%; left: -20%; width: 300px; height: 300px; background: #c7ede0; }
-        .blob-2 { bottom: -10%; right: -20%; width: 250px; height: 250px; background: #d6f5ea; animation-delay: 2s; }
-        @keyframes morph {
-            0%   { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; transform: scale(1); }
-            100% { border-radius: 60% 40% 30% 70% / 60% 50% 40% 50%; transform: scale(1.1); }
-        }
-
         /* ===== REVEAL ===== */
         .reveal {
             opacity: 0;
-            transform: translateY(40px);
-            transition: all 1s cubic-bezier(0.5, 0, 0, 1);
+            transform: translateY(35px);
+            transition: all 1.1s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
         /* ===== SCROLL INDICATOR ===== */
         .scroll-indicator {
             position: absolute;
-            bottom: 20px;
+            bottom: 18px;
             left: 50%;
             transform: translateX(-50%);
-            animation: bounce 2s infinite;
-            opacity: 0.6;
-            color: #52A882;
-            font-size: 0.8rem;
-            letter-spacing: 1px;
+            animation: bounce 2.2s infinite;
+            color: var(--gold);
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
             z-index: 20;
         }
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
-            40%  { transform: translateY(-10px) translateX(-50%); }
-            60%  { transform: translateY(-5px) translateX(-50%); }
+            40%  { transform: translateY(-8px) translateX(-50%); }
+            60%  { transform: translateY(-4px) translateX(-50%); }
         }
 
-        /* ===== TIPOGRAFÍA ===== */
-        .pre-title {
-            font-size: 0.8rem;
-            letter-spacing: 3px;
+        /* ===== DIVISOR DORADO ===== */
+        .gold-divider {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            width: 100%;
+            max-width: 320px;
+            margin: 16px auto;
+        }
+        .gold-divider::before,
+        .gold-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold-light), transparent);
+        }
+        .gold-divider span {
+            color: var(--gold);
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            white-space: nowrap;
+        }
+
+        /* ===== TIPOGRAFÍA BASE ===== */
+        .pre-label {
+            font-size: 0.65rem;
+            letter-spacing: 4px;
             text-transform: uppercase;
-            color: #52A882;
+            color: var(--gold);
             margin-bottom: 10px;
+            font-weight: 500;
         }
-        .title {
-            font-size: 1.8rem;
-            font-weight: 600;
-            letter-spacing: 5px;
-            color: #3D9970;
-            margin-bottom: 5px;
+
+        .serif-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 300;
+            color: var(--dark-green);
+            font-size: 1.6rem;
+            letter-spacing: 2px;
         }
-        .baby-name {
+
+        .calligraphy {
             font-family: 'Great Vibes', cursive;
-            font-size: 5.5rem;
-            color: #2D8A5E;
+            color: var(--eucalyptus);
+            line-height: 1.1;
+        }
+
+        .names-hero {
+            font-family: 'Great Vibes', cursive;
+            font-size: 4.8rem;
+            color: var(--dark-green);
             line-height: 1;
-            margin-bottom: 20px;
-            text-shadow: 0 3px 16px rgba(61,153,112,0.3), 0 0 50px rgba(149,213,178,0.4);
-            -webkit-text-stroke: 0.5px rgba(61,153,112,0.25);
-            animation: floatText 4s ease-in-out infinite;
+            text-shadow: 0 3px 20px rgba(110,130,80,0.25);
+            animation: floatText 5s ease-in-out infinite;
         }
         @keyframes floatText {
             0%, 100% { transform: translateY(0); }
-            50%       { transform: translateY(-10px); }
+            50%       { transform: translateY(-8px); }
         }
-        .message-bubble {
-            background: rgba(255,255,255,0.8);
-            backdrop-filter: blur(10px);
-            padding: 20px;
-            border-radius: 20px;
-            border: 1px solid rgba(255,255,255,0.5);
-            box-shadow: 0 8px 32px rgba(149,213,178,0.15);
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin: 15px 0;
+
+        .ampersand-hero {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem;
+            color: var(--gold);
+            font-weight: 300;
+            font-style: italic;
+            display: block;
+            margin: 0 10px;
+            line-height: 1.2;
+        }
+
+        /* ===== DECORACIÓN FLORAL ===== */
+        .floral-corner {
+            position: absolute;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .floral-corner img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .corner-tl { top: 0; left: 0; width: 160px; height: 160px; transform-origin: top left; }
+        .corner-br { bottom: 0; right: 0; width: 160px; height: 160px; transform: rotate(180deg); }
+        .corner-tr { top: 0; right: 0; width: 160px; height: 160px; transform: scaleX(-1); }
+        .corner-bl { bottom: 0; left: 0; width: 140px; height: 140px; transform: rotate(180deg) scaleX(-1); }
+
+        .floral-center {
+            width: 100%;
+            max-width: 380px;
+            display: flex;
+            justify-content: center;
+            pointer-events: none;
+        }
+        .floral-center img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        /* ===== FONDO ROSAS ===== */
+        .bg-roses {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            opacity: 0.08;
+            background-image: url('Imagenes/ROSAS FONDO.avif');
+            background-size: cover;
+            background-position: center;
+            pointer-events: none;
         }
 
         /* ===================================================
-           PÁGINA 0 — VIDEO HERO (ayselcorazon.mp4)
+           SECCIÓN 1 — PORTADA / HERO
         =================================================== */
         #page0 {
             padding: 0;
-            background: #1a0a0c;
+            background: var(--dark-green);
+            min-height: 100vh;
         }
 
-        /* Contenedor centrado que limita el ancho del video en desktop */
-        .hero-video-wrapper {
+        .hero-bg {
             position: absolute;
             inset: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
             z-index: 0;
         }
-
-        .hero-video {
+        .hero-bg img {
+            width: 100%;
             height: 100%;
-            width: auto;
-            max-width: 100%;
-            object-fit: contain;
-            z-index: 0;
+            object-fit: cover;
+            object-position: center top;
+            display: block;
         }
 
-        /* En móvil sí ocupa todo el ancho */
-        @media (max-width: 500px) {
-            .hero-video {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-        }
-
-        /* Overlay oscuro suave para que el texto resalte */
         .hero-overlay {
             position: absolute;
             inset: 0;
             background: linear-gradient(
-                to bottom,
-                rgba(240,250,246,0.10) 0%,
-                rgba(149,213,178,0.20) 50%,
-                rgba(240,250,246,0.80) 100%
+                180deg,
+                rgba(46,61,40,0.55) 0%,
+                rgba(46,61,40,0.25) 40%,
+                rgba(46,61,40,0.70) 75%,
+                rgba(46,61,40,0.92) 100%
             );
             z-index: 1;
         }
@@ -195,58 +254,113 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            height: 100%;
-            text-align: center;
-            padding: 30px 20px;
-            max-width: 450px;
+            justify-content: flex-end;
+            height: 100vh;
             width: 100%;
+            max-width: 480px;
+            text-align: center;
+            padding: 30px 24px 60px;
         }
 
         .hero-tag {
-            font-size: 0.7rem;
-            letter-spacing: 4px;
+            font-size: 0.6rem;
+            letter-spacing: 5px;
             text-transform: uppercase;
-            color: #fff;
-            background: rgba(149,213,178,0.7);
-            backdrop-filter: blur(8px);
-            padding: 6px 18px;
+            color: var(--gold-light);
+            border: 1px solid rgba(212,175,114,0.5);
+            padding: 6px 20px;
             border-radius: 30px;
-            margin-bottom: 18px;
+            margin-bottom: 20px;
             animation: fadeInDown 1.2s ease both;
+            backdrop-filter: blur(8px);
+            background: rgba(46,61,40,0.3);
         }
-        .hero-name {
-            font-family: 'Great Vibes', cursive;
-            font-size: 6.5rem;
-            color: #fff;
-            text-shadow: 0 4px 20px rgba(149,213,178,0.6);
-            line-height: 1;
+
+        .hero-names {
             animation: fadeInUp 1.4s ease both;
+            margin-bottom: 6px;
         }
-        .hero-sub {
-            font-size: 0.85rem;
+        .hero-name-text {
+            font-family: 'Great Vibes', cursive;
+            font-size: 5.5rem;
+            color: #fff;
+            line-height: 1;
+            display: block;
+            text-shadow: 0 4px 24px rgba(0,0,0,0.4);
+        }
+        .hero-amp {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            color: var(--gold-light);
+            font-weight: 300;
+            font-style: italic;
+            display: block;
+            line-height: 1.3;
+        }
+
+        .hero-phrase {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.05rem;
+            font-style: italic;
+            color: rgba(255,255,255,0.85);
+            line-height: 1.6;
+            margin: 14px 0 24px;
+            animation: fadeInUp 1.7s ease both;
+        }
+
+        .hero-date-badge {
+            font-size: 0.7rem;
             letter-spacing: 3px;
             text-transform: uppercase;
-            color: rgba(255,255,255,0.9);
-            margin-top: 10px;
-            animation: fadeInUp 1.6s ease both;
+            color: var(--gold-light);
+            animation: fadeInUp 1.9s ease both;
+            margin-bottom: 28px;
         }
-        .hero-cta {
-            margin-top: 35px;
-            display: flex;
-            flex-direction: column;
+
+        .btn-hero {
+            display: inline-flex;
             align-items: center;
-            gap: 6px;
-            animation: fadeInUp 2s ease both;
-            color: rgba(255,255,255,0.8);
-            font-size: 0.75rem;
-            letter-spacing: 1px;
+            gap: 10px;
+            background: transparent;
+            border: 1.5px solid var(--gold-light);
+            color: var(--gold-light);
+            padding: 13px 32px;
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.35s ease;
+            text-decoration: none;
+            animation: fadeInUp 2.1s ease both;
+            backdrop-filter: blur(6px);
         }
-        .hero-cta-arrow {
-            font-size: 1.4rem;
-            animation: bounce 2s infinite;
-            display: block;
+        .btn-hero:hover, .btn-hero:active {
+            background: var(--gold-light);
+            color: var(--dark-green);
         }
+
+        /* ===== FLOWER CORNERS EN HERO ===== */
+        .hero-flowers-tl {
+            position: absolute;
+            top: 0; left: 0;
+            width: 180px; height: 180px;
+            z-index: 2;
+            pointer-events: none;
+        }
+        .hero-flowers-tl img { width: 100%; height: 100%; object-fit: contain; }
+
+        .hero-flowers-br {
+            position: absolute;
+            bottom: 0; right: 0;
+            width: 180px; height: 180px;
+            z-index: 2;
+            pointer-events: none;
+            transform: rotate(180deg);
+        }
+        .hero-flowers-br img { width: 100%; height: 100%; object-fit: contain; }
 
         @keyframes fadeInDown {
             from { opacity: 0; transform: translateY(-20px); }
@@ -258,441 +372,567 @@
         }
 
         /* ===================================================
-           PÁGINA 1 — MOODBOARD (eco videos + fotos)
+           SECCIÓN 2 — MENSAJE / NUESTRA HISTORIA
         =================================================== */
-        #page1 { padding: 10px; }
+        #page1 {
+            background: var(--ivory);
+        }
 
-        /* Grid moodboard: 3 medios + texto central */
-        .moodboard {
-            position: relative;
+        .message-card {
+            background: rgba(255,255,255,0.75);
+            backdrop-filter: blur(12px);
+            padding: 30px 28px;
+            border-radius: 20px;
+            border: 1px solid rgba(184,150,90,0.2);
+            box-shadow: 0 8px 40px rgba(110,124,74,0.08);
+            max-width: 420px;
             width: 100%;
-            max-width: 450px;
-            height: 100%;
+            text-align: center;
+        }
+
+        .message-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem;
+            font-style: italic;
+            color: var(--text-mid);
+            line-height: 1.8;
+        }
+
+        /* ===================================================
+           SECCIÓN 3 — PADRES
+        =================================================== */
+        #page2 {
+            background: var(--beige);
+        }
+
+        .parents-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            grid-template-rows: 1fr auto 1.2fr;
-            gap: 10px;
-            align-items: center;
-            z-index: 10;
-        }
-
-        /* Texto central ocupa las 2 columnas en la fila del medio */
-        .moodboard-center {
-            grid-column: 1 / -1;
-            text-align: center;
-            padding: 5px 0;
-        }
-
-        /* Tarjetas de media */
-        .media-card {
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 8px 25px rgba(149,213,178,0.25);
-            position: relative;
-            background: #c7ede0;
-        }
-        .media-card img,
-        .media-card video {
+            gap: 20px;
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
+            max-width: 440px;
+            margin-top: 16px;
         }
 
-        /* Tarjeta grande: eco 1 — ocupa fila 1 col 1 */
-        .card-aysel {
-            grid-column: 1;
-            grid-row: 1;
-            height: 160px;
-            border-radius: 20px 20px 8px 20px;
-            animation: floatCard 5s ease-in-out infinite;
-            cursor: pointer;
-        }
-        /* Tarjeta eco: eco 2 — ocupa fila 1 col 2 */
-        .card-eco {
-            grid-column: 2;
-            grid-row: 1;
-            height: 160px;
-            border-radius: 20px 20px 20px 8px;
-            animation: floatCard 5s ease-in-out infinite;
-            animation-delay: 1s;
-            cursor: pointer;
-        }
-        /* Tarjeta foto principal: ocupa fila 3 col 1-2 completa */
-        .card-vestido {
-            grid-column: 1 / -1;
-            grid-row: 3;
-            height: 180px;
-            border-radius: 20px;
-            animation: floatCard 5s ease-in-out infinite;
-            animation-delay: 2s;
-            width: 100%;
-            cursor: pointer;
-        }
-        /* Asegurar que las imágenes dentro de las tarjetas no se corten */
-        .card-aysel img, .card-eco img, .card-vestido img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-            display: block;
+        .parent-block {
+            background: rgba(255,255,255,0.7);
+            border-radius: 16px;
+            padding: 20px 14px;
+            border: 1px solid rgba(184,150,90,0.15);
+            box-shadow: 0 4px 20px rgba(110,124,74,0.06);
         }
 
-        /* Etiqueta decorativa sobre las tarjetas */
-        .media-label {
-            position: absolute;
-            bottom: 8px;
-            left: 10px;
-            background: rgba(255,255,255,0.85);
-            backdrop-filter: blur(6px);
+        .parent-side-label {
             font-size: 0.6rem;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             text-transform: uppercase;
-            color: #3D9970;
-            padding: 4px 10px;
-            border-radius: 20px;
+            color: var(--gold);
+            margin-bottom: 10px;
             font-weight: 600;
         }
 
-        @keyframes floatCard {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50%       { transform: translateY(-6px) rotate(0.5deg); }
-        }
-
-        /* Texto dentro del moodboard */
-        .moodboard-center .pre-title { margin-bottom: 4px; }
-        .moodboard-center .baby-name {
-            font-size: 5rem;
+        .parent-calligraphy {
+            font-family: 'Great Vibes', cursive;
+            font-size: 1.5rem;
+            color: var(--eucalyptus);
             margin-bottom: 8px;
-            color: #2D8A5E;
-            text-shadow: 0 2px 12px rgba(61,153,112,0.25), 0 0 40px rgba(149,213,178,0.3);
-            -webkit-text-stroke: 0.5px rgba(61,153,112,0.3);
-        }
-        .moodboard-center .message-bubble {
-            font-size: 0.82rem;
-            padding: 12px 16px;
-            margin: 6px 0;
+            line-height: 1.2;
         }
 
-        /* Nombres de los papás */
-        .parents-names {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            margin-top: 10px;
+        .parent-names-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem;
+            color: var(--text-mid);
+            line-height: 1.6;
+            font-weight: 400;
         }
-        .parent-label {
-            font-family: 'Great Vibes', cursive;
+
+        /* ===================================================
+           SECCIÓN 4 — PADRINOS
+        =================================================== */
+        #page3 {
+            background: var(--ivory);
+        }
+
+        .padrinos-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(242,235,217,0.6));
+            border-radius: 20px;
+            padding: 32px 28px;
+            border: 1px solid rgba(184,150,90,0.25);
+            box-shadow: 0 8px 40px rgba(110,124,74,0.1);
+            max-width: 380px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .rings-icon {
             font-size: 2rem;
-            color: #3D9970;
-            line-height: 1;
-        }
-        .parent-amp {
-            font-family: 'Great Vibes', cursive;
-            font-size: 1.4rem;
-            color: #52A882;
-        }
-        .parent-heart {
-            font-size: 0.85rem;
-            color: #95D5B2;
-            opacity: 0.7;
+            margin-bottom: 10px;
+            display: block;
         }
 
-        /* Video nítido — sin filtros que degraden calidad */
-        .card-aysel video {
-            image-rendering: auto;
-            will-change: transform;
-            backface-visibility: hidden;
-            -webkit-backface-visibility: hidden;
-        }
-        .card-aysel {
-            box-shadow: 0 10px 30px rgba(149,213,178,0.35);
-            border: 2px solid rgba(255,255,255,0.6);
+        /* ===================================================
+           SECCIÓN 5 — FECHA
+        =================================================== */
+        #page4 {
+            background: var(--dark-green);
         }
 
-        /* ===== PÁGINA 2 ===== */
-        .date-box {
+        .date-container {
             display: flex;
+            align-items: stretch;
+            justify-content: center;
+            gap: 0;
+            margin: 24px 0;
+            width: 100%;
+            max-width: 360px;
+        }
+
+        .date-block {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 15px;
-            margin: 20px 0;
-            color: #3D9970;
-            font-weight: 600;
+            padding: 24px 16px;
+            border: 1px solid rgba(212,175,114,0.4);
+            background: rgba(255,255,255,0.04);
+            backdrop-filter: blur(4px);
         }
-        .date-number { font-size: 3rem; line-height: 1; color: #95D5B2; }
-        .location-text { font-size: 0.9rem; margin-bottom: 20px; line-height: 1.5; }
-        .btn-modern {
-            display: inline-block;
-            background: linear-gradient(135deg, #95D5B2, #52A882);
-            color: white;
-            padding: 12px 25px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-size: 0.9rem;
+        .date-block:first-child { border-radius: 16px 0 0 16px; }
+        .date-block:last-child  { border-radius: 0 16px 16px 0; }
+
+        .date-sep {
+            width: 1px;
+            background: rgba(212,175,114,0.3);
+            align-self: stretch;
+        }
+
+        .date-day-name {
+            font-size: 0.55rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+
+        .date-big {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4.5rem;
+            color: #fff;
+            line-height: 1;
+            font-weight: 300;
+        }
+
+        .date-month {
+            font-size: 0.6rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-top: 6px;
+            font-weight: 500;
+        }
+
+        .date-year-badge {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            color: rgba(255,255,255,0.7);
+            letter-spacing: 4px;
+            margin-top: 12px;
+            font-style: italic;
+        }
+
+        .date-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: rgba(255,255,255,0.9);
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-align: center;
+            margin-bottom: 6px;
+        }
+
+        .date-subtitle {
+            font-size: 0.6rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            text-align: center;
+        }
+
+        /* ===================================================
+           SECCIÓN 6 — CEREMONIA
+        =================================================== */
+        #page5 {
+            background: var(--ivory);
+        }
+
+        .event-card {
+            background: rgba(255,255,255,0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px 24px;
+            width: 100%;
+            max-width: 420px;
+            border: 1px solid rgba(184,150,90,0.2);
+            box-shadow: 0 8px 40px rgba(110,124,74,0.08);
+            text-align: center;
+        }
+
+        .event-icon {
+            font-size: 2.2rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .event-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.7rem;
+            color: var(--dark-green);
             font-weight: 600;
-            box-shadow: 0 4px 15px rgba(149,213,178,0.5);
-            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 4px;
+        }
+
+        .event-time {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.4rem;
+            color: var(--gold);
+            font-weight: 300;
+            margin-bottom: 8px;
+        }
+
+        .event-address {
+            font-size: 0.82rem;
+            color: var(--text-soft);
+            line-height: 1.7;
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 1rem;
+        }
+
+        .btn-maps {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, var(--olive), var(--eucalyptus));
+            color: #fff;
+            padding: 13px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            box-shadow: 0 5px 20px rgba(78,107,74,0.35);
+            transition: transform 0.25s, box-shadow 0.25s;
+            margin-top: 18px;
             border: none;
             cursor: pointer;
         }
-        .btn-modern:active { transform: scale(0.95); }
-        .countdown-title {
-            font-size: 0.8rem;
-            letter-spacing: 2px;
-            margin-top: 40px;
-            margin-bottom: 15px;
-            color: #52A882;
-        }
-        .countdown-grid { display: flex; justify-content: center; gap: 12px; }
-        .cd-item {
-            background: white;
-            padding: 15px 10px;
-            border-radius: 15px;
-            min-width: 65px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-        }
-        .cd-item span { display: block; font-size: 1.8rem; font-weight: 600; color: #95D5B2; }
-        .cd-item p { font-size: 0.6rem; letter-spacing: 1px; color: #5A7A6E; margin-top: 5px; text-transform: uppercase; }
+        .btn-maps:active { transform: scale(0.96); }
+        .btn-maps:hover  { box-shadow: 0 8px 28px rgba(78,107,74,0.5); }
 
-        /* ===== PÁGINA 3 ===== */
-        .rsvp-btn {
+        /* ===================================================
+           SECCIÓN 7 — RECEPCIÓN
+        =================================================== */
+        #page6 {
+            background: var(--beige);
+        }
+
+        /* ===================================================
+           SECCIÓN 8 — CUENTA REGRESIVA
+        =================================================== */
+        #page7 {
+            background: linear-gradient(180deg, var(--dark-green) 0%, #1C2A18 100%);
+        }
+
+        .countdown-label {
+            font-size: 0.6rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 28px;
+            font-weight: 500;
+        }
+
+        .countdown-grid {
             display: flex;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            max-width: 380px;
+        }
+
+        .cd-item {
+            flex: 1;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(212,175,114,0.3);
+            border-radius: 16px;
+            padding: 18px 8px;
+            backdrop-filter: blur(6px);
+            text-align: center;
+        }
+
+        .cd-item span {
+            display: block;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.8rem;
+            font-weight: 300;
+            color: #fff;
+            line-height: 1;
+        }
+
+        .cd-item p {
+            font-size: 0.52rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-top: 6px;
+            font-weight: 500;
+        }
+
+        .countdown-names {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3rem;
+            color: rgba(255,255,255,0.85);
+            margin-top: 30px;
+            line-height: 1.1;
+        }
+
+        /* ===================================================
+           SECCIÓN 9 — CONFIRMACIÓN
+        =================================================== */
+        #page8 {
+            background: var(--ivory);
+        }
+
+        .confirm-card {
+            background: rgba(255,255,255,0.9);
+            border-radius: 20px;
+            padding: 36px 28px;
+            width: 100%;
+            max-width: 400px;
+            border: 1px solid rgba(184,150,90,0.2);
+            box-shadow: 0 8px 40px rgba(110,124,74,0.1);
+            text-align: center;
+        }
+
+        .btn-confirm {
+            display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
-            background: white;
-            color: #2D4A3E;
             width: 100%;
-            padding: 15px 20px;
-            border-radius: 30px;
-            margin-bottom: 15px;
+            background: linear-gradient(135deg, var(--olive), var(--eucalyptus));
+            color: #fff;
+            padding: 16px 28px;
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
             text-decoration: none;
-            font-weight: 500;
-            border: 2px solid #c7ede0;
-            transition: all 0.3s;
+            box-shadow: 0 6px 24px rgba(78,107,74,0.35);
+            transition: transform 0.25s, box-shadow 0.25s;
+            margin-top: 20px;
+            border: none;
+            cursor: pointer;
         }
-        .rsvp-btn:hover, .rsvp-btn:active { background: #c7ede0; }
-        .parent-name { font-weight: 600; color: #3D9970; }
-        .whatsapp-icon { width: 20px; height: 20px; fill: #4FCE5D; }
+        .btn-confirm:active { transform: scale(0.97); }
+        .btn-confirm:hover  { box-shadow: 0 10px 32px rgba(78,107,74,0.5); }
 
-        /* ===== BOTÓN PLAY INICIAL ===== */
+        /* ===================================================
+           SECCIÓN 10 — CIERRE
+        =================================================== */
+        #page9 {
+            background: var(--dark-green);
+            padding: 50px 20px 80px;
+        }
+
+        .closing-phrase {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-style: italic;
+            color: rgba(255,255,255,0.85);
+            line-height: 1.7;
+            max-width: 360px;
+            text-align: center;
+        }
+
+        .closing-names {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.5rem;
+            color: #fff;
+            margin: 18px 0 10px;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            line-height: 1;
+        }
+
+        .closing-date {
+            font-size: 0.65rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-top: 6px;
+        }
+
+        .closing-flowers {
+            width: 100%;
+            max-width: 340px;
+            margin-top: 30px;
+            opacity: 0.9;
+        }
+        .closing-flowers img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        /* ===== BOTÓN DE MÚSICA FLOTANTE ===== */
+        .music-btn {
+            position: fixed;
+            bottom: 24px;
+            right: 20px;
+            z-index: 999;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(10px);
+            border: 1.5px solid rgba(184,150,90,0.5);
+            box-shadow: 0 4px 20px rgba(184,150,90,0.3);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            animation: pulseBtn 3s ease-in-out infinite;
+        }
+        .music-btn:active { transform: scale(0.92); }
+        @keyframes pulseBtn {
+            0%, 100% { box-shadow: 0 4px 20px rgba(184,150,90,0.3); }
+            50%       { box-shadow: 0 4px 30px rgba(184,150,90,0.55); }
+        }
+        .music-btn.playing { animation: pulseBtn 3s ease-in-out infinite, spinNote 5s linear infinite; }
+        @keyframes spinNote {
+            from { transform: rotate(0deg); }
+            to   { transform: rotate(360deg); }
+        }
+
+        /* ===== BOTÓN PLAY HERO ===== */
         .play-music-btn {
             display: flex;
             align-items: center;
             gap: 10px;
-            margin-top: 28px;
-            background: rgba(255,255,255,0.18);
+            margin-top: 18px;
+            background: rgba(255,255,255,0.1);
             backdrop-filter: blur(12px);
-            border: 1.5px solid rgba(255,255,255,0.5);
-            color: #fff;
-            padding: 12px 24px;
+            border: 1px solid rgba(212,175,114,0.4);
+            color: rgba(255,255,255,0.85);
+            padding: 11px 22px;
             border-radius: 50px;
             cursor: pointer;
             font-family: 'Montserrat', sans-serif;
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 2px;
+            font-size: 0.68rem;
+            font-weight: 500;
+            letter-spacing: 2.5px;
             text-transform: uppercase;
             transition: background 0.3s, transform 0.2s;
-            animation: fadeInUp 2.2s ease both;
-            position: relative;
-            overflow: hidden;
+            animation: fadeInUp 2.3s ease both;
         }
-        .play-music-btn::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: rgba(149,213,178,0.25);
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-        .play-music-btn:hover::before,
-        .play-music-btn:active::before { opacity: 1; }
+        .play-music-btn:hover { background: rgba(255,255,255,0.18); }
         .play-music-btn:active { transform: scale(0.96); }
+        .play-music-btn.hidden {
+            opacity: 0;
+            pointer-events: none;
+            transform: scale(0.85);
+            transition: opacity 0.5s, transform 0.5s;
+        }
 
-        .play-icon {
-            width: 32px;
-            height: 32px;
+        .play-icon-dot {
+            width: 28px;
+            height: 28px;
             border-radius: 50%;
             background: rgba(255,255,255,0.9);
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
-            animation: pulsePlay 1.8s ease-in-out infinite;
+            animation: pulsePlayDot 2s ease-in-out infinite;
         }
-        .play-icon svg { width: 14px; height: 14px; fill: #95D5B2; margin-left: 2px; }
-        @keyframes pulsePlay {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(255,255,255,0.5); }
-            50%       { box-shadow: 0 0 0 8px rgba(255,255,255,0); }
-        }
-
-        /* Ocultar botón play una vez que la música arrancó */
-        .play-music-btn.hidden {
-            opacity: 0;
-            pointer-events: none;
-            transform: scale(0.8);
-            transition: opacity 0.5s, transform 0.5s;
+        .play-icon-dot svg { width: 12px; height: 12px; fill: var(--olive); margin-left: 2px; }
+        @keyframes pulsePlayDot {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(255,255,255,0.6); }
+            50%       { box-shadow: 0 0 0 7px rgba(255,255,255,0); }
         }
 
-        /* ===== BOTÓN DE MÚSICA ===== */
-        .music-btn {
-            position: fixed;
-            bottom: 24px;
-            right: 20px;
-            z-index: 999;
-            width: 46px;
-            height: 46px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.85);
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(149,213,178,0.5);
-            box-shadow: 0 4px 18px rgba(149,213,178,0.35);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            transition: transform 0.2s, box-shadow 0.2s;
-            animation: pulseBtn 2.5s ease-in-out infinite;
-        }
-        .music-btn:active { transform: scale(0.92); }
-        @keyframes pulseBtn {
-            0%, 100% { box-shadow: 0 4px 18px rgba(149,213,178,0.35); }
-            50%       { box-shadow: 0 4px 28px rgba(149,213,178,0.65); }
-        }
-        .music-btn.playing { animation: pulseBtn 2.5s ease-in-out infinite, spinNote 4s linear infinite; }
-        @keyframes spinNote {
-            from { transform: rotate(0deg); }
-            to   { transform: rotate(360deg); }
-        }
-
-        /* ===== GALERÍA DE FOTOS (página 1 extra) ===== */
-        #page1b {
-            background: #F0FAF6;
-            padding: 20px 10px;
-        }
-        .gallery-title {
-            font-size: 0.75rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: #52A882;
-            margin-bottom: 14px;
-            text-align: center;
-        }
-        .photo-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 8px;
+        /* ===== FOTOS DE LA PAREJA ===== */
+        .couple-photo {
             width: 100%;
-            max-width: 450px;
-        }
-        .photo-grid .photo-item {
-            border-radius: 14px;
+            max-width: 360px;
+            border-radius: 20px;
             overflow: hidden;
-            aspect-ratio: 1;
-            box-shadow: 0 4px 14px rgba(149,213,178,0.2);
-            background: #c7ede0;
-            cursor: pointer;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
             position: relative;
+            margin: 10px 0;
         }
-        .photo-grid .photo-item img {
+        .couple-photo img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
             display: block;
-            transition: transform 0.4s ease;
+            object-fit: cover;
         }
-        .photo-grid .photo-item:hover img { transform: scale(1.06); }
-        .photo-grid .photo-item.wide {
-            grid-column: span 2;
-            aspect-ratio: 2/1;
-        }
-        /* Ícono de lupa sobre cada foto */
-        .photo-item::after {
-            content: '🔍';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0);
-            font-size: 1.8rem;
-            transition: transform 0.3s ease;
-            pointer-events: none;
-        }
-        .photo-item:hover::after { transform: translate(-50%, -50%) scale(1); }
 
-        /* ===== LIGHTBOX ===== */
-        .lightbox {
-            display: none;
-            position: fixed;
-            inset: 0;
-            z-index: 9999;
-            background: rgba(0,0,0,0.92);
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            animation: fadeInLB 0.3s ease;
+        .photo-frame-gold {
+            position: relative;
+            width: 100%;
+            max-width: 320px;
+            margin: 0 auto;
         }
-        .lightbox.open { display: flex; }
-        @keyframes fadeInLB {
-            from { opacity: 0; }
-            to   { opacity: 1; }
-        }
-        .lightbox img {
-            max-width: 100%;
-            max-height: 90vh;
-            border-radius: 16px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-            object-fit: contain;
-            animation: zoomInLB 0.3s ease;
-        }
-        @keyframes zoomInLB {
-            from { transform: scale(0.85); opacity: 0; }
-            to   { transform: scale(1); opacity: 1; }
-        }
-        .lightbox-close {
+        .photo-frame-gold::before {
+            content: '';
             position: absolute;
-            top: 16px;
-            right: 20px;
-            color: white;
-            font-size: 2rem;
-            cursor: pointer;
-            background: rgba(255,255,255,0.15);
-            border: none;
-            border-radius: 50%;
-            width: 44px;
-            height: 44px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            line-height: 1;
-            transition: background 0.2s;
+            inset: -6px;
+            border: 1px solid rgba(184,150,90,0.4);
+            border-radius: 26px;
+            pointer-events: none;
+            z-index: 1;
         }
-        .lightbox-close:hover { background: rgba(255,255,255,0.3); }
-        .lightbox-nav {
+        .photo-frame-gold::after {
+            content: '';
             position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            color: white;
-            font-size: 2rem;
-            cursor: pointer;
-            background: rgba(255,255,255,0.15);
-            border: none;
-            border-radius: 50%;
-            width: 44px;
-            height: 44px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background 0.2s;
+            inset: -12px;
+            border: 1px solid rgba(184,150,90,0.15);
+            border-radius: 32px;
+            pointer-events: none;
+            z-index: 1;
         }
-        .lightbox-nav:hover { background: rgba(255,255,255,0.3); }
-        .lightbox-prev { left: 12px; }
-        .lightbox-next { right: 12px; }
+
+        /* ===== SECTION BG ALTERNATES ===== */
+        #page5, #page8 { background: var(--ivory); }
+        #page2, #page6 { background: var(--beige); }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 400px) {
+            .names-hero     { font-size: 4rem; }
+            .hero-name-text { font-size: 4.5rem; }
+            .hero-amp       { font-size: 2.5rem; }
+            .date-big       { font-size: 3.8rem; }
+            .parents-grid   { grid-template-columns: 1fr; gap: 14px; }
+            .hero-flowers-tl,
+            .hero-flowers-br { width: 130px; height: 130px; }
+            .corner-tl, .corner-br, .corner-tr { width: 120px; height: 120px; }
+        }
+
+        @media (min-width: 600px) {
+            .hero-name-text { font-size: 6.5rem; }
+            .hero-amp       { font-size: 4rem; }
+            .corner-tl, .corner-br, .corner-tr { width: 200px; height: 200px; }
+        }
     </style>
+
     <!-- Vercel Analytics -->
     <script defer src="/_vercel/insights/script.js"></script>
 </head>
@@ -701,235 +941,512 @@
 <div class="container">
 
     <!-- =============================================
-         PÁGINA 0 — VIDEO HERO: ayselcorazon.mp4
+         SECCIÓN 1 — PORTADA HERO
     ============================================= -->
-    <section class="page" id="page0">
-        <div class="hero-video-wrapper">
-            <video class="hero-video" autoplay muted loop playsinline>
-                <source src="Imagenes/ambos.mp4" type="video/mp4">
-            </video>
+    <section class="page" id="page0" style="padding:0; min-height:100vh; justify-content:center; align-items:center;">
+
+        <!-- Flores esquinas -->
+        <div class="hero-flowers-tl">
+            <img src="Imagenes/ESQUINA ARRIBA.png" alt="">
+        </div>
+        <div class="hero-flowers-br">
+            <img src="Imagenes/ESQUINA ARRIBA.png" alt="">
+        </div>
+
+        <!-- Foto de fondo -->
+        <div class="hero-bg">
+            <img src="Imagenes/JUNTOS.jpeg" alt="Nélida y Gustavo">
         </div>
         <div class="hero-overlay"></div>
 
-        <div class="hero-content">
-            <span class="hero-tag">Baby Shower</span>
-            <h1 class="hero-name">Luan</h1>
-            <p class="hero-sub">Una historia de amor está por comenzar</p>
+        <!-- Contenido hero -->
+        <div class="hero-content" style="justify-content:flex-end;">
+            <span class="hero-tag">💍 Nos Casamos</span>
+
+            <div class="hero-names">
+                <span class="hero-name-text">Nélida</span>
+                <span class="hero-amp">&</span>
+                <span class="hero-name-text">Gustavo</span>
+            </div>
+
+            <p class="hero-phrase">
+                "Dos historias, un mismo destino<br>y una vida para compartir."
+            </p>
+
+            <p class="hero-date-badge">05 · 06 &nbsp;|&nbsp; Septiembre 2026</p>
 
             <button class="play-music-btn" id="playMusicBtn">
-                <span class="play-icon">
+                <span class="play-icon-dot">
                     <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                 </span>
                 Escucha nuestra canción
             </button>
 
-            <div class="hero-cta">
-                <span>Desliza para descubrir</span>
-                <span class="hero-cta-arrow">↓</span>
-            </div>
+            <a href="#page1" class="btn-hero" style="margin-top:22px;">
+                Descubrir la invitación &nbsp;↓
+            </a>
         </div>
     </section>
 
     <!-- =============================================
-         PÁGINA 1 — MOODBOARD
+         SECCIÓN 2 — NUESTRA HISTORIA / MENSAJE
     ============================================= -->
     <section class="page" id="page1">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
+        <!-- Fondo suave -->
+        <div class="bg-roses"></div>
 
-        <div class="moodboard">
-
-            <!-- Eco foto 1 -->
-            <div class="media-card card-aysel reveal" onclick="openLightbox('Imagenes/Lourdes Huayllucu_/202605111702140043OB.JPG')">
-                <img src="Imagenes/Lourdes Huayllucu_/202605111707270050OB.JPG" alt="Eco Luan">
-                <span class="media-label">Luan 🩵</span>
-            </div>
-
-            <!-- Eco foto 2 -->
-            <div class="media-card card-eco reveal" style="transition-delay:0.2s;" onclick="openLightbox('Imagenes/Lourdes Huayllucu_/202605111703300046OB.JPG')">
-                <img src="Imagenes/Lourdes Huayllucu_/202605111718380061OB.JPG" alt="Eco Luan">
-                <span class="media-label">Eco 🤍</span>
-            </div>
-
-            <!-- Texto central -->
-            <div class="moodboard-center">
-                <p class="pre-title reveal" style="transition-delay:0.3s;">Poco a poco, nuestro mundo se pinta de verde</p>
-                <h2 class="title reveal" style="transition-delay:0.4s;">BABY SHOWER</h2>
-                <h1 class="baby-name reveal" style="transition-delay:0.5s;">Luan</h1>
-                <div class="message-bubble reveal" style="transition-delay:0.6s;">
-                    <p>La aventura más bonita está por comenzar...<br>Un nuevo guerrerito está a punto de iluminar nuestra familia. 🩵</p>
-                </div>
-                <div class="parents-names reveal" style="transition-delay:0.7s;">
-                    <span class="parent-heart">♡</span>
-                    <span class="parent-label">Dylan</span>
-                    <span class="parent-amp">&</span>
-                    <span class="parent-label">Lourdes</span>
-                    <span class="parent-heart">♡</span>
-                </div>
-            </div>
-
-            <!-- Foto principal -->
-            <div class="media-card card-vestido reveal" style="transition-delay:0.7s;" onclick="openLightbox('Imagenes/Lourdes Huayllucu_/202605111648500037OB.JPG')">
-                <img src="Imagenes/Lourdes Huayllucu_/202605111648500037OB.JPG" alt="Foto de Luan" style="object-position: center;">
-                <span class="media-label" style="bottom:12px; left:50%; transform:translateX(-50%); white-space:nowrap; font-size:0.65rem; background:rgba(149,213,178,0.9); color:white; padding:6px 16px;">✨ Nuestro pequeño héroe 👶🩵 ✨</span>
-            </div>
-
+        <!-- Floral esquina superior -->
+        <div class="floral-corner corner-tl">
+            <img src="Imagenes/ESQUINA ARRIBA.png" alt="">
+        </div>
+        <div class="floral-corner corner-br">
+            <img src="Imagenes/ESQUINA ARRIBA.png" alt="">
         </div>
 
-        <div class="scroll-indicator">Desliza hacia abajo ↓</div>
+        <div class="mobile-wrapper" style="z-index:10;">
+            <p class="pre-label reveal">Nuestro camino juntos</p>
+
+            <div class="gold-divider reveal" style="transition-delay:.1s;">
+                <span>✦</span>
+            </div>
+
+            <div class="message-card reveal" style="transition-delay:.2s;">
+                <p class="message-text">
+                    Hay momentos que se quedan para siempre en el corazón.<br><br>
+                    Hoy queremos compartir uno de los más importantes de nuestras vidas
+                    junto a las personas que amamos.
+                </p>
+            </div>
+
+            <div class="gold-divider reveal" style="transition-delay:.4s;">
+                <span>✦</span>
+            </div>
+
+            <!-- Foto de pareja -->
+            <div class="photo-frame-gold reveal" style="transition-delay:.5s;">
+                <div class="couple-photo">
+                    <img src="Imagenes/FORMAL.jpeg" alt="Nélida y Gustavo" style="max-height:380px;">
+                </div>
+            </div>
+
+            <div class="reveal" style="transition-delay:.7s; margin-top:20px;">
+                <span class="calligraphy" style="font-size:3rem; color:var(--eucalyptus);">Nélida & Gustavo</span>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">↓</div>
     </section>
 
     <!-- =============================================
-         PÁGINA 1B — GALERÍA DE FOTOS
-    ============================================= -->
-    <section class="page" id="page1b">
-        <div class="blob blob-1" style="background:#d6f5ea;"></div>
-        <div class="mobile-wrapper">
-            <p class="gallery-title reveal">Sus primeras fotos 📸</p>
-            <div class="photo-grid">
-                <div class="photo-item reveal" style="transition-delay:0.1s;" onclick="openLightbox('Imagenes/Lourdes Huayllucu_/202605111651160039OB.JPG',0)">
-                    <img src="Imagenes/Lourdes Huayllucu_/202605111651160039OB.JPG" alt="Foto Luan">
-                </div>
-                <div class="photo-item reveal" style="transition-delay:0.15s;" onclick="openLightbox('Imagenes/Lourdes Huayllucu_/202605111702050041OB.JPG',1)">
-                    <img src="Imagenes/Lourdes Huayllucu_/202605111702050041OB.JPG" alt="Foto Luan">
-                </div>
-                <div class="photo-item reveal" style="transition-delay:0.2s;" onclick="openLightbox('Imagenes/Lourdes Huayllucu_/202605111702110042OB.JPG',2)">
-                    <img src="Imagenes/Lourdes Huayllucu_/202605111702110042OB.JPG" alt="Foto Luan">
-                </div>
-                <div class="photo-item wide reveal" style="transition-delay:0.25s;" onclick="openLightbox('Imagenes/Lourdes Huayllucu_/202605111703130045OB.JPG',3)">
-                    <img src="Imagenes/Lourdes Huayllucu_/202605111703130045OB.JPG" alt="Foto Luan">
-                </div>
-                <div class="photo-item reveal" style="transition-delay:0.3s;" onclick="openLightbox('Imagenes/Lourdes Huayllucu_/202605111703300046OB.JPG',4)">
-                    <img src="Imagenes/Lourdes Huayllucu_/202605111703300046OB.JPG" alt="Foto Luan">
-                </div>
-                <div class="photo-item reveal" style="transition-delay:0.35s;" onclick="openLightbox('Imagenes/Lourdes Huayllucu_/202605111706110048OB.JPG',5)">
-                    <img src="Imagenes/Lourdes Huayllucu_/202605111706110048OB.JPG" alt="Foto Luan">
-                </div>
-                <div class="photo-item reveal" style="transition-delay:0.4s;" onclick="openLightbox('Imagenes/Lourdes Huayllucu_/202605111706560049OB.JPG',6)">
-                    <img src="Imagenes/Lourdes Huayllucu_/202605111706560049OB.JPG" alt="Foto Luan">
-                </div>
-                <div class="photo-item wide reveal" style="transition-delay:0.45s;" onclick="openLightbox('Imagenes/Lourdes Huayllucu_/202605111707270050OB.JPG',7)">
-                    <img src="Imagenes/Lourdes Huayllucu_/202605111707270050OB.JPG" alt="Foto Luan">
-                </div>
-                <div class="photo-item reveal" style="transition-delay:0.5s;" onclick="openLightbox('Imagenes/Lourdes Huayllucu_/202605111708030054OB.JPG',8)">
-                    <img src="Imagenes/Lourdes Huayllucu_/202605111708030054OB.JPG" alt="Foto Luan">
-                </div>
-                <div class="photo-item reveal" style="transition-delay:0.55s;" onclick="openLightbox('Imagenes/Lourdes Huayllucu_/202605111708270055OB.JPG',9)">
-                    <img src="Imagenes/Lourdes Huayllucu_/202605111708270055OB.JPG" alt="Foto Luan">
-                </div>
-                <div class="photo-item reveal" style="transition-delay:0.6s;" onclick="openLightbox('Imagenes/Lourdes Huayllucu_/202605111709590057OB.JPG',10)">
-                    <img src="Imagenes/Lourdes Huayllucu_/202605111709590057OB.JPG" alt="Foto Luan">
-                </div>
-                <div class="photo-item wide reveal" style="transition-delay:0.65s;" onclick="openLightbox('Imagenes/Lourdes Huayllucu_/202605111713500058OB.JPG',11)">
-                    <img src="Imagenes/Lourdes Huayllucu_/202605111713500058OB.JPG" alt="Foto Luan">
-                </div>
-                <div class="photo-item reveal" style="transition-delay:0.7s;" onclick="openLightbox('Imagenes/Lourdes Huayllucu_/202605111715070059OB.JPG',12)">
-                    <img src="Imagenes/Lourdes Huayllucu_/202605111715070059OB.JPG" alt="Foto Luan">
-                </div>
-                <div class="photo-item reveal" style="transition-delay:0.75s;" onclick="openLightbox('Imagenes/Lourdes Huayllucu_/202605111716180060OB.JPG',13)">
-                    <img src="Imagenes/Lourdes Huayllucu_/202605111716180060OB.JPG" alt="Foto Luan">
-                </div>
-                <div class="photo-item reveal" style="transition-delay:0.8s;" onclick="openLightbox('Imagenes/Lourdes Huayllucu_/202605111718380061OB.JPG',14)">
-                    <img src="Imagenes/Lourdes Huayllucu_/202605111718380061OB.JPG" alt="Foto Luan">
-                </div>
-            </div>
-        </div>
-        <div class="scroll-indicator">Desliza hacia abajo ↓</div>
-    </section>
-
-    <!-- ===== LIGHTBOX ===== -->
-    <div class="lightbox" id="lightbox" onclick="closeLightboxOnBg(event)">
-        <button class="lightbox-close" onclick="closeLightbox()">✕</button>
-        <button class="lightbox-nav lightbox-prev" onclick="lightboxNav(-1)">‹</button>
-        <img id="lightboxImg" src="" alt="Foto ampliada">
-        <button class="lightbox-nav lightbox-next" onclick="lightboxNav(1)">›</button>
-    </div>
-
-    <!-- =============================================
-         PÁGINA 2 — FECHA Y CONTADOR
+         SECCIÓN 3 — PADRES
     ============================================= -->
     <section class="page" id="page2">
-        <div class="blob blob-1" style="background: #d6f5ea;"></div>
-        <div class="mobile-wrapper">
-            <h2 class="title reveal" style="color: #95D5B2;">Contando los días para que nos acompañes en este dia especial✨</h2>
+        <div class="floral-corner corner-tr">
+            <img src="Imagenes/ESQUINA ARRIBA.png" alt="">
+        </div>
+        <div class="floral-corner corner-bl">
+            <img src="Imagenes/ESQUINA ARRIBA.png" alt="">
+        </div>
 
-            <div class="date-box reveal" style="transition-delay: 0.2s;">
-                <div style="text-align: right;">
-                    <p>SÁBADO</p>
-                    <p style="font-size: 0.8rem;">MAYO</p>
+        <div class="mobile-wrapper" style="z-index:10;">
+            <p class="pre-label reveal">Con amor y gratitud</p>
+
+            <h2 class="serif-title reveal" style="transition-delay:.1s; font-size:1.5rem;">
+                Con la bendición de<br>nuestros padres
+            </h2>
+
+            <div class="gold-divider reveal" style="transition-delay:.2s;">
+                <span>✦</span>
+            </div>
+
+            <div class="parents-grid reveal" style="transition-delay:.3s;">
+                <!-- Padres de la novia -->
+                <div class="parent-block">
+                    <p class="parent-side-label">Padres de la novia</p>
+                    <p class="parent-calligraphy">Nélida</p>
+                    <p class="parent-names-text">
+                        Raúl Alba Guzmán<br>
+                        Alicia Rojas Arias
+                    </p>
                 </div>
-                <div class="date-number">16</div>
-                <div style="text-align: left;">
-                    <p>A LAS</p>
-                    <p>15:00 Hrs</p>
+                <!-- Padres del novio -->
+                <div class="parent-block">
+                    <p class="parent-side-label">Padres del novio</p>
+                    <p class="parent-calligraphy">Gustavo</p>
+                    <p class="parent-names-text">
+                        Gonzalo Condori Limachi<br>
+                        Elena Elisa Choque de Condori
+                    </p>
                 </div>
             </div>
 
-            <p class="location-text reveal" style="transition-delay: 0.4s;">
-                <strong>Salón de Eventos LITORAL</strong><br>
-                Calle 17 de obrajes en el local del Sindicato Litoral.<br>La Paz, Bolivia
-            </p>
-            <a href="https://maps.app.goo.gl/6gTANdpD8oya19Qu9" class="btn-modern reveal" style="transition-delay: 0.5s;">VER UBICACIÓN 📍</a>
-
-            <p class="countdown-title reveal" style="transition-delay: 0.6s;">LA CUENTA REGRESIVA HA COMENZADO...</p>
-            <div class="countdown-grid reveal" id="countdown" style="transition-delay: 0.7s;">
-                <div class="cd-item"><span id="days">00</span><p>Días</p></div>
-                <div class="cd-item"><span id="hours">00</span><p>Horas</p></div>
-                <div class="cd-item"><span id="minutes">00</span><p>Min</p></div>
-                <div class="cd-item"><span id="seconds">00</span><p>Seg</p></div>
+            <!-- Foto familia -->
+            <div class="photo-frame-gold reveal" style="transition-delay:.5s; margin-top:22px;">
+                <div class="couple-photo" style="max-width:300px;">
+                    <img src="Imagenes/FAMILIA.jpeg" alt="Familia" style="max-height:260px; object-position:center top;">
+                </div>
             </div>
         </div>
-        <div class="scroll-indicator">Desliza hacia abajo ↓</div>
+
+        <div class="scroll-indicator" style="color:var(--gold);">↓</div>
     </section>
 
     <!-- =============================================
-         PÁGINA 3 — CONFIRMACIÓN
+         SECCIÓN 4 — PADRINOS
     ============================================= -->
     <section class="page" id="page3">
-        <div class="blob blob-2" style="background: #c7ede0; top: 20%;"></div>
-        <div class="mobile-wrapper">
-            <h2 class="title reveal" style="color: #3D9970;">¿Nos acompañas? 🩵</h2>
+        <div class="bg-roses"></div>
+        <div class="floral-corner corner-tl">
+            <img src="Imagenes/ESQUINERO FLORES.png" alt="">
+        </div>
+        <div class="floral-corner corner-br">
+            <img src="Imagenes/ESQUINERO FLORES.png" alt="">
+        </div>
 
-            <p class="location-text reveal" style="transition-delay: 0.2s; margin-top: 20px;">
-                Estamos a punto de cambiar horas de sueño por horas de amor.<br>
-                ¡Ven a compartir nuestra alegría en este Baby Shower!
+        <div class="mobile-wrapper" style="z-index:10;">
+            <p class="pre-label reveal">Unidos ante la ley</p>
+
+            <div class="padrinos-card reveal" style="transition-delay:.2s;">
+                <span class="rings-icon">💍</span>
+
+                <div class="gold-divider" style="margin:8px auto 16px;">
+                    <span>✦</span>
+                </div>
+
+                <p class="calligraphy" style="font-size:2rem; color:var(--eucalyptus); margin-bottom:14px;">
+                    Padrinos de Civil
+                </p>
+
+                <p class="parent-names-text" style="font-size:1.15rem; font-family:'Cormorant Garamond',serif; line-height:1.9;">
+                    Eduardo Fernandez<br>
+                    Sulema Alba
+                </p>
+
+                <div class="gold-divider" style="margin:18px auto 0;">
+                    <span>✦</span>
+                </div>
+            </div>
+
+            <!-- Flores decorativas -->
+            <div class="floral-center reveal" style="transition-delay:.4s; max-width:280px; margin-top:20px; opacity:.85;">
+                <img src="Imagenes/FLORES1.png" alt="">
+            </div>
+        </div>
+
+        <div class="scroll-indicator">↓</div>
+    </section>
+
+    <!-- =============================================
+         SECCIÓN 5 — FECHA
+    ============================================= -->
+    <section class="page" id="page4">
+        <!-- Fondo con rosas muy tenues -->
+        <div style="position:absolute;inset:0;z-index:0;opacity:0.06;background-image:url('Imagenes/ROSAS FONDO.avif');background-size:cover;background-position:center;pointer-events:none;"></div>
+
+        <div class="mobile-wrapper" style="z-index:10;">
+            <p class="pre-label reveal" style="color:var(--gold-light); letter-spacing:5px;">La gran celebración</p>
+
+            <div class="gold-divider reveal" style="transition-delay:.1s;">
+                <span style="color:var(--gold-light);">✦</span>
+            </div>
+
+            <h2 class="date-title reveal" style="transition-delay:.2s;">Septiembre</h2>
+            <p class="date-subtitle reveal" style="transition-delay:.25s;">dos mil veintiséis</p>
+
+            <div class="date-container reveal" style="transition-delay:.3s;">
+                <div class="date-block">
+                    <span class="date-day-name">Viernes</span>
+                    <span class="date-big">05</span>
+                    <span class="date-month">Sep · 2026</span>
+                </div>
+                <div class="date-sep"></div>
+                <div class="date-block">
+                    <span class="date-day-name">Sábado</span>
+                    <span class="date-big">06</span>
+                    <span class="date-month">Sep · 2026</span>
+                </div>
+            </div>
+
+            <div class="gold-divider reveal" style="transition-delay:.45s;">
+                <span style="color:var(--gold-light);">✦</span>
+            </div>
+
+            <p class="reveal" style="transition-delay:.5s; font-family:'Cormorant Garamond',serif; font-size:1.1rem; font-style:italic; color:rgba(255,255,255,0.7); text-align:center; max-width:300px; line-height:1.7;">
+                Una celebración que marcará el comienzo de nuestra historia juntos
             </p>
 
-            <div class="reveal" style="transition-delay: 0.4s; width: 100%; margin-top: 30px;">
-                <a href="https://wa.me/59163082176?text=¡Hola!%20Confirmo%20mi%20asistencia%20al%20Baby%20Shower%20de%20Luan" target="_blank" class="rsvp-btn">
-                    <svg class="whatsapp-icon" viewBox="0 0 24 24"><path d="M12.031 0C5.385 0 0 5.385 0 12.031c0 2.12.551 4.148 1.547 5.96L.357 23.64l5.807-1.52A11.966 11.966 0 0012.03 24c6.646 0 12.031-5.385 12.031-12.031S18.677 0 12.031 0zm3.859 17.062c-.173.483-.984.93-1.406.969-.403.04-1.011.161-3.23-.76-2.65-1.1-4.328-3.82-4.457-3.992-.13-.172-1.066-1.417-1.066-2.702 0-1.284.665-1.916.903-2.166.236-.25.513-.314.685-.314.172 0 .346 0 .497.008.156.008.366-.06.573.44.215.52.736 1.796.8 1.944.065.149.108.324.022.497-.086.173-.13.282-.26.411-.13.13-.27.284-.388.397-.13.123-.27.257-.123.51.149.252.663 1.094 1.42 1.776.974.873 1.796 1.144 2.046 1.267.25.123.398.1.546-.064.15-.164.646-.749.82-1.006.174-.257.348-.214.577-.13.228.086 1.442.682 1.69.805.25.123.415.184.477.286.06.102.06.592-.113 1.075z"/></svg>
-                    Confirmar con mamá — <span class="parent-name">LOURDES</span>
-                </a>
+            <!-- Flores esquinas -->
+            <div style="position:absolute;bottom:0;left:0;width:140px;opacity:.5;pointer-events:none;z-index:1;">
+                <img src="Imagenes/ESQUINA FONDO1.png" alt="" style="width:100%;height:auto;object-fit:contain;">
+            </div>
+            <div style="position:absolute;bottom:0;right:0;width:140px;opacity:.5;pointer-events:none;z-index:1;transform:scaleX(-1);">
+                <img src="Imagenes/ESQUINA FONDO1.png" alt="" style="width:100%;height:auto;object-fit:contain;">
+            </div>
+        </div>
 
-                <a href="https://wa.me/59170515215?text=¡Hola!%20Confirmo%20mi%20asistencia%20al%20Baby%20Shower%20de%20Luan" target="_blank" class="rsvp-btn">
-                    <svg class="whatsapp-icon" viewBox="0 0 24 24"><path d="M12.031 0C5.385 0 0 5.385 0 12.031c0 2.12.551 4.148 1.547 5.96L.357 23.64l5.807-1.52A11.966 11.966 0 0012.03 24c6.646 0 12.031-5.385 12.031-12.031S18.677 0 12.031 0zm3.859 17.062c-.173.483-.984.93-1.406.969-.403.04-1.011.161-3.23-.76-2.65-1.1-4.328-3.82-4.457-3.992-.13-.172-1.066-1.417-1.066-2.702 0-1.284.665-1.916.903-2.166.236-.25.513-.314.685-.314.172 0 .346 0 .497.008.156.008.366-.06.573.44.215.52.736 1.796.8 1.944.065.149.108.324.022.497-.086.173-.13.282-.26.411-.13.13-.27.284-.388.397-.13.123-.27.257-.123.51.149.252.663 1.094 1.42 1.776.974.873 1.796 1.144 2.046 1.267.25.123.398.1.546-.064.15-.164.646-.749.82-1.006.174-.257.348-.214.577-.13.228.086 1.442.682 1.69.805.25.123.415.184.477.286.06.102.06.592-.113 1.075z"/></svg>
-                    Confirmar con papá — <span class="parent-name">DYLAN</span>
+        <div class="scroll-indicator" style="color:var(--gold-light);">↓</div>
+    </section>
+
+    <!-- =============================================
+         SECCIÓN 6 — CEREMONIA RELIGIOSA
+    ============================================= -->
+    <section class="page" id="page5">
+        <div class="bg-roses"></div>
+        <div class="floral-corner corner-tl">
+            <img src="Imagenes/ESQUINA ARRIBA.png" alt="">
+        </div>
+
+        <div class="mobile-wrapper" style="z-index:10;">
+            <p class="pre-label reveal">Viernes · 05 de Septiembre</p>
+
+            <div class="event-card reveal" style="transition-delay:.2s;">
+                <span class="event-icon">⛪</span>
+
+                <div class="gold-divider" style="margin:6px auto 14px;">
+                    <span>Ceremonia Religiosa</span>
+                </div>
+
+                <h3 class="event-name">Iglesia Jesús Nazareno</h3>
+
+                <div class="event-time">16:00 h</div>
+
+                <p class="event-address">
+                    Calle La Paz esquina<br>
+                    Calle Ñuflo de Chávez
+                </p>
+
+                <a href="https://maps.app.goo.gl/n9CASQHNHoqA3jU89?g_st=aw"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="btn-maps">
+                    📍 &nbsp;Ver ubicación
                 </a>
             </div>
 
-            <p class="reveal" style="font-size: 0.8rem; margin-top: 40px; transition-delay: 0.6s;">
-                Los pedacitos de magia existen... y estamos a punto de conocer el nuestro. 🩵
+            <!-- Foto pareja -->
+            <div class="photo-frame-gold reveal" style="transition-delay:.4s; margin-top:24px;">
+                <div class="couple-photo" style="max-width:300px;">
+                    <img src="Imagenes/JUNTOS.jpeg" alt="Nélida y Gustavo" style="max-height:260px; object-position:center top;">
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">↓</div>
+    </section>
+
+    <!-- =============================================
+         SECCIÓN 7 — RECEPCIÓN
+    ============================================= -->
+    <section class="page" id="page6">
+        <div class="floral-corner corner-tr">
+            <img src="Imagenes/ESQUINA ARRIBA.png" alt="">
+        </div>
+        <div class="floral-corner corner-bl">
+            <img src="Imagenes/ESQUINA ARRIBA.png" alt="">
+        </div>
+
+        <div class="mobile-wrapper" style="z-index:10;">
+            <p class="pre-label reveal">Sábado · 06 de Septiembre</p>
+
+            <p class="reveal" style="transition-delay:.1s; font-family:'Cormorant Garamond',serif; font-size:1.05rem; font-style:italic; color:var(--text-mid); line-height:1.7; max-width:340px; margin-bottom:16px;">
+                Finalizada la ceremonia, nos encantará<br>continuar esta celebración junto a ustedes.
             </p>
+
+            <div class="event-card reveal" style="transition-delay:.25s; background:rgba(255,255,255,0.9);">
+                <span class="event-icon">🥂</span>
+
+                <div class="gold-divider" style="margin:6px auto 14px;">
+                    <span>Recepción</span>
+                </div>
+
+                <h3 class="event-name">Salón de Eventos PALADIN</h3>
+
+                <div class="event-time">19:00 h</div>
+
+                <p class="event-address">
+                    Av. Sexto Anillo final La Colorada<br>
+                    Barrio Roca y Coronado C/5 Casa 4<br>
+                    Zona Mercado Primavera · Sobre El Trillo
+                </p>
+
+                <a href="https://maps.app.goo.gl/zu1R8qMVja9aXbF26?g_st=aw"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="btn-maps">
+                    📍 &nbsp;Ver ubicación
+                </a>
+            </div>
+
+            <!-- Decoración flores -->
+            <div class="floral-center reveal" style="transition-delay:.5s; max-width:260px; margin-top:16px; opacity:.8;">
+                <img src="Imagenes/FLORES1.png" alt="">
+            </div>
+        </div>
+
+        <div class="scroll-indicator" style="color:var(--gold);">↓</div>
+    </section>
+
+    <!-- =============================================
+         SECCIÓN 8 — CUENTA REGRESIVA
+    ============================================= -->
+    <section class="page" id="page7">
+        <!-- Fondo rosas muy tenue -->
+        <div style="position:absolute;inset:0;z-index:0;opacity:0.04;background-image:url('Imagenes/ROSAS FONDO.avif');background-size:cover;background-position:center;pointer-events:none;"></div>
+
+        <div class="mobile-wrapper" style="z-index:10;">
+            <p class="pre-label reveal" style="color:var(--gold-light);">Falta poco para el gran día</p>
+
+            <div class="gold-divider reveal" style="transition-delay:.1s;">
+                <span style="color:var(--gold-light);">✦</span>
+            </div>
+
+            <div class="reveal" style="transition-delay:.15s; font-family:'Cormorant Garamond',serif; font-size:1.6rem; color:rgba(255,255,255,0.8); letter-spacing:3px; font-style:italic;">
+                05 · Septiembre · 2026
+            </div>
+
+            <div class="countdown-grid reveal" id="countdown" style="transition-delay:.3s; margin-top:24px;">
+                <div class="cd-item">
+                    <span id="days">00</span>
+                    <p>Días</p>
+                </div>
+                <div class="cd-item">
+                    <span id="hours">00</span>
+                    <p>Horas</p>
+                </div>
+                <div class="cd-item">
+                    <span id="minutes">00</span>
+                    <p>Min</p>
+                </div>
+                <div class="cd-item">
+                    <span id="seconds">00</span>
+                    <p>Seg</p>
+                </div>
+            </div>
+
+            <div class="countdown-names reveal" style="transition-delay:.5s;">
+                Nélida & Gustavo
+            </div>
+
+            <!-- Flores decorativas -->
+            <div style="position:absolute;bottom:0;left:0;right:0;display:flex;justify-content:space-between;pointer-events:none;z-index:1;opacity:0.35;">
+                <img src="Imagenes/ESQUINA FONDO1.png" alt="" style="width:130px;height:auto;object-fit:contain;transform:none;">
+                <img src="Imagenes/ESQUINA FONDO1.png" alt="" style="width:130px;height:auto;object-fit:contain;transform:scaleX(-1);">
+            </div>
+        </div>
+
+        <div class="scroll-indicator" style="color:var(--gold-light);">↓</div>
+    </section>
+
+    <!-- =============================================
+         SECCIÓN 9 — CONFIRMACIÓN
+    ============================================= -->
+    <section class="page" id="page8">
+        <div class="bg-roses"></div>
+        <div class="floral-corner corner-tl">
+            <img src="Imagenes/ESQUINA ARRIBA.png" alt="">
+        </div>
+
+        <div class="mobile-wrapper" style="z-index:10;">
+            <p class="pre-label reveal">¿Nos acompañas?</p>
+
+            <div class="confirm-card reveal" style="transition-delay:.2s;">
+                <span style="font-size:2rem; display:block; margin-bottom:10px;">📅</span>
+
+                <h3 class="serif-title" style="font-size:1.6rem; margin-bottom:12px;">
+                    Confirmar Asistencia
+                </h3>
+
+                <div class="gold-divider" style="margin:10px auto 16px;">
+                    <span>✦</span>
+                </div>
+
+                <p style="font-family:'Cormorant Garamond',serif; font-size:1.05rem; font-style:italic; color:var(--text-mid); line-height:1.7; margin-bottom:8px;">
+                    Tu presencia es el mejor regalo.<br>
+                    Por favor confírmanos tu asistencia antes del <strong style="font-style:normal;">20 de Agosto de 2026</strong>.
+                </p>
+
+                <!-- Botón preparado para agregar enlace de WhatsApp -->
+                <a href="#" class="btn-confirm" id="btnConfirmar">
+                    💬 &nbsp;Confirmar Asistencia
+                </a>
+
+                <p style="font-size:0.72rem; color:var(--text-soft); margin-top:16px; letter-spacing:1px;">
+                    El enlace de confirmación estará disponible próximamente
+                </p>
+            </div>
+
+            <!-- Flores -->
+            <div class="floral-center reveal" style="transition-delay:.4s; max-width:260px; margin-top:20px; opacity:.8;">
+                <img src="Imagenes/FLORES.avif" alt="">
+            </div>
+        </div>
+
+        <div class="scroll-indicator">↓</div>
+    </section>
+
+    <!-- =============================================
+         SECCIÓN 10 — CIERRE
+    ============================================= -->
+    <section class="page" id="page9">
+        <!-- Fondo rosas tenue -->
+        <div style="position:absolute;inset:0;z-index:0;opacity:0.05;background-image:url('Imagenes/ROSAS FONDO.avif');background-size:cover;background-position:center;pointer-events:none;"></div>
+
+        <!-- Flores esquinas -->
+        <div style="position:absolute;top:0;left:0;width:160px;pointer-events:none;z-index:1;opacity:.6;">
+            <img src="Imagenes/ESQUINA ARRIBA.png" alt="" style="width:100%;height:auto;object-fit:contain;">
+        </div>
+        <div style="position:absolute;top:0;right:0;width:160px;pointer-events:none;z-index:1;opacity:.6;transform:scaleX(-1);">
+            <img src="Imagenes/ESQUINA ARRIBA.png" alt="" style="width:100%;height:auto;object-fit:contain;">
+        </div>
+
+        <div class="mobile-wrapper" style="z-index:10; padding-top:60px; padding-bottom:40px;">
+
+            <!-- Flores -->
+            <div class="floral-center reveal" style="max-width:300px; margin-bottom:20px; opacity:.9;">
+                <img src="Imagenes/ESQUINERO FLORES.png" alt="">
+            </div>
+
+            <p class="closing-phrase reveal" style="transition-delay:.2s;">
+                "Lo mejor de nuestra historia<br>está por comenzar."
+            </p>
+
+            <div class="gold-divider reveal" style="transition-delay:.35s;">
+                <span style="color:var(--gold-light);">✦</span>
+            </div>
+
+            <div class="closing-names reveal" style="transition-delay:.45s;">
+                Nélida & Gustavo
+            </div>
+
+            <p class="closing-date reveal" style="transition-delay:.55s;">
+                05 &nbsp;•&nbsp; 06 &nbsp;Septiembre &nbsp;2026
+            </p>
+
+            <!-- Flores inferiores -->
+            <div class="floral-center reveal" style="transition-delay:.65s; max-width:280px; margin-top:28px; opacity:.85;">
+                <img src="Imagenes/ESQUINERO FLORES.png" alt="">
+            </div>
         </div>
     </section>
 
-</div>
+</div><!-- /.container -->
 
 <!-- ===== MÚSICA DE FONDO ===== -->
 <audio id="bgMusic" loop preload="auto">
-    <source src="Sonido/musica.mp3" type="audio/mpeg">
+    <source src="Sonido/Kevin & Karla - Perfect - Spanish Version.mp3" type="audio/mpeg">
 </audio>
 
-<button class="music-btn" id="musicBtn" title="Música" aria-label="Activar música">🎵</button>
+<!-- Botón flotante música -->
+<button class="music-btn" id="musicBtn" title="Música" aria-label="Reproducir / pausar música">🎵</button>
 
 <script>
     // ===== SCROLL REVEAL =====
     function reveal() {
         var reveals = document.querySelectorAll(".reveal");
         for (var i = 0; i < reveals.length; i++) {
-            var windowHeight = window.innerHeight;
-            var elementTop = reveals[i].getBoundingClientRect().top;
-            if (elementTop < windowHeight - 50) {
+            var winH   = window.innerHeight;
+            var top    = reveals[i].getBoundingClientRect().top;
+            if (top < winH - 60) {
                 reveals[i].classList.add("active");
             }
         }
@@ -937,115 +1454,65 @@
     document.querySelector('.container').addEventListener("scroll", reveal);
     reveal();
 
-    // ===== CONTADOR REGRESIVO =====
-    // Fecha: 16 de Mayo de 2026 a las 16:00
-    const countDownDate = new Date(2026, 4, 16, 16, 0, 0).getTime();
-    const x = setInterval(function() {
-        const now = new Date().getTime();
-        const distance = countDownDate - now;
+    // ===== NAVEGACIÓN SUAVE con href #id =====
+    document.querySelectorAll('a[href^="#page"]').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            var target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
 
-        const days    = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours   = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    // ===== CUENTA REGRESIVA — 05 Sep 2026 16:00 =====
+    var countDownDate = new Date(2026, 8, 5, 16, 0, 0).getTime(); // month es 0-indexed: 8 = septiembre
+
+    var x = setInterval(function() {
+        var now      = new Date().getTime();
+        var distance = countDownDate - now;
+
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("countdown").innerHTML =
+                "<p style='color:#D4AF72;font-family:\"Cormorant Garamond\",serif;font-size:1.8rem;font-style:italic;'>¡El gran día ha llegado! 💍</p>";
+            return;
+        }
+
+        var days    = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours   = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
         document.getElementById("days").innerHTML    = days    < 10 ? "0" + days    : days;
         document.getElementById("hours").innerHTML   = hours   < 10 ? "0" + hours   : hours;
         document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
         document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
-
-        if (distance < 0) {
-            clearInterval(x);
-            document.getElementById("countdown").innerHTML =
-                "<p style='color:#95D5B2;font-weight:600;font-size:1.5rem;'>¡El día ha llegado! 🎉</p>";
-        }
     }, 1000);
 
-    // ===== LIGHTBOX =====
-    const galleryImages = [
-        'Imagenes/Lourdes Huayllucu_/202605111651160039OB.JPG',
-        'Imagenes/Lourdes Huayllucu_/202605111702050041OB.JPG',
-        'Imagenes/Lourdes Huayllucu_/202605111702110042OB.JPG',
-        'Imagenes/Lourdes Huayllucu_/202605111703130045OB.JPG',
-        'Imagenes/Lourdes Huayllucu_/202605111703300046OB.JPG',
-        'Imagenes/Lourdes Huayllucu_/202605111706110048OB.JPG',
-        'Imagenes/Lourdes Huayllucu_/202605111706560049OB.JPG',
-        'Imagenes/Lourdes Huayllucu_/202605111707270050OB.JPG',
-        'Imagenes/Lourdes Huayllucu_/202605111708030054OB.JPG',
-        'Imagenes/Lourdes Huayllucu_/202605111708270055OB.JPG',
-        'Imagenes/Lourdes Huayllucu_/202605111709590057OB.JPG',
-        'Imagenes/Lourdes Huayllucu_/202605111713500058OB.JPG',
-        'Imagenes/Lourdes Huayllucu_/202605111715070059OB.JPG',
-        'Imagenes/Lourdes Huayllucu_/202605111716180060OB.JPG',
-        'Imagenes/Lourdes Huayllucu_/202605111718380061OB.JPG'
-    ];
-    let currentLBIndex = 0;
-
-    function openLightbox(src, index) {
-        const lb = document.getElementById('lightbox');
-        const img = document.getElementById('lightboxImg');
-        img.src = src;
-        currentLBIndex = (index !== undefined) ? index : 0;
-        lb.classList.add('open');
-        document.body.style.overflow = 'hidden';
-    }
-
-    function closeLightbox() {
-        document.getElementById('lightbox').classList.remove('open');
-        document.body.style.overflow = '';
-    }
-
-    function closeLightboxOnBg(e) {
-        if (e.target === document.getElementById('lightbox')) closeLightbox();
-    }
-
-    function lightboxNav(dir) {
-        currentLBIndex = (currentLBIndex + dir + galleryImages.length) % galleryImages.length;
-        const img = document.getElementById('lightboxImg');
-        img.style.opacity = '0';
-        setTimeout(() => {
-            img.src = galleryImages[currentLBIndex];
-            img.style.opacity = '1';
-        }, 150);
-    }
-
-    // Cerrar lightbox con tecla Escape / flechas
-    document.addEventListener('keydown', function(e) {
-        const lb = document.getElementById('lightbox');
-        if (!lb.classList.contains('open')) return;
-        if (e.key === 'Escape') closeLightbox();
-        if (e.key === 'ArrowRight') lightboxNav(1);
-        if (e.key === 'ArrowLeft') lightboxNav(-1);
-    });
-
-    // Transición suave de la imagen en lightbox
-    document.getElementById('lightboxImg').style.transition = 'opacity 0.15s ease';
-
-    const music      = document.getElementById('bgMusic');
-    const musicBtn   = document.getElementById('musicBtn');
-    const playMusicBtn = document.getElementById('playMusicBtn');
-    let   playing    = false;
+    // ===== MÚSICA =====
+    var music        = document.getElementById('bgMusic');
+    var musicBtn     = document.getElementById('musicBtn');
+    var playMusicBtn = document.getElementById('playMusicBtn');
+    var playing      = false;
 
     function startMusic() {
         if (!playing) {
-            music.volume = 0.5;
-            music.play().then(() => {
+            music.volume = 0.45;
+            music.play().then(function() {
                 playing = true;
                 musicBtn.textContent = '🎵';
                 musicBtn.classList.add('playing');
-                // Ocultar el botón inicial
                 playMusicBtn.classList.add('hidden');
-            }).catch(() => {});
+            }).catch(function() {});
         }
     }
 
-    // Botón grande del hero
     playMusicBtn.addEventListener('click', function(e) {
         e.stopPropagation();
         startMusic();
     });
 
-    // Botón flotante para silenciar / reanudar
     musicBtn.addEventListener('click', function(e) {
         e.stopPropagation();
         if (playing) {
@@ -1054,7 +1521,7 @@
             musicBtn.textContent = '🔇';
             musicBtn.classList.remove('playing');
         } else {
-            music.volume = 0.5;
+            music.volume = 0.45;
             music.play();
             playing = true;
             musicBtn.textContent = '🎵';
