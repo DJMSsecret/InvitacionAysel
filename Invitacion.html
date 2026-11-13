@@ -8,7 +8,7 @@
     <meta property="og:title" content="✝️ Bautizo de Matt — Invitación Digital">
     <meta property="og:description"
         content="Con mucho amor y alegría, queremos compartir contigo este día tan especial para nuestra familia. Sábado 21 de Noviembre de 2026.">
-    <meta property="og:image" content="/Imagenes/matt/Matt grande.jpg">
+    <meta property="og:image" content="/Imagenes/matt/matt gorra.jpeg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -227,8 +227,10 @@
             font-family: 'Great Vibes', cursive;
             font-size: clamp(4.5rem, 14vw, 9.5rem);
             color: #FFFFFF;
-            line-height: 0.95;
+            line-height: 1.1;
             display: block;
+            margin-top: clamp(14px, 3.2vw, 26px);
+            margin-bottom: clamp(6px, 1.5vw, 14px);
             text-shadow: 0 4px 25px rgba(12, 24, 38, 0.65), 0 0 40px rgba(185, 215, 245, 0.35);
             filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.3));
         }
@@ -621,7 +623,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center 20%;
+            object-position: center 12%;
         }
 
         .hero-phrase {
@@ -642,7 +644,7 @@
             color: var(--celeste-light);
             text-transform: uppercase;
             font-weight: 600;
-            margin-bottom: 6px;
+            margin-bottom: clamp(12px, 2.5vw, 20px);
         }
 
         .hero-date {
@@ -1297,6 +1299,57 @@
             line-height: 1.15;
         }
 
+        .padrinos-photo {
+            width: 100%;
+            max-width: min(440px, 88vw);
+            margin: clamp(14px, 3vw, 22px) auto clamp(18px, 4vw, 26px);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 2px solid rgba(223, 192, 122, 0.6);
+            box-shadow: var(--shadow-elevated);
+            position: relative;
+        }
+
+        .padrinos-photo img {
+            width: 100%;
+            height: auto;
+            max-height: clamp(260px, 55vw, 420px);
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .padrinos-photo:hover img {
+            transform: scale(1.03);
+        }
+
+        .padrinos-daughters-box {
+            padding: clamp(14px, 3vw, 18px) clamp(10px, 2.5vw, 16px);
+            background: linear-gradient(135deg, rgba(235, 244, 252, 0.9), rgba(255, 255, 255, 0.95));
+            border-radius: clamp(12px, 2.5vw, 16px);
+            margin: clamp(14px, 3vw, 20px) 0 clamp(6px, 1.5vw, 10px);
+            border: 1px solid rgba(91, 155, 213, 0.3);
+            box-shadow: 0 4px 14px rgba(46, 124, 209, 0.06);
+        }
+
+        .padrinos-daughters-badge {
+            font-size: clamp(0.58rem, 1.5vw, 0.72rem);
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            font-weight: 700;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .padrinos-daughters-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.1rem, 3vw, 1.38rem);
+            font-weight: 700;
+            color: var(--azul-noche);
+            line-height: 1.45;
+        }
+
         /* ============================================================
        SECCIÓN 7: CUENTA REGRESIVA
     ============================================================ */
@@ -1641,7 +1694,7 @@
                 </div>
 
                 <div class="hero-photo-portrait reveal">
-                    <img src="Imagenes/matt/Matt grande.jpg" alt="Matt - 9 Años">
+                    <img src="Imagenes/matt/matt gorra.jpeg" alt="Matt - 9 Años">
                 </div>
 
                 <span class="hero-age-pill reveal" style="transition-delay:.15s;">9 AÑOS · DÍA DE FE, AMOR Y
@@ -1681,8 +1734,6 @@
 ============================================================ -->
         <section class="section" id="s2-frase">
             <div class="bg-pattern-celeste"></div>
-            <div class="fl fl-tl fl-sm"><img src="Imagenes/fondo/fondo azul.png" alt=""></div>
-            <div class="fl fl-br fl-sm"><img src="Imagenes/fondo/fondo azul.png" alt=""></div>
 
             <div class="wrap">
                 <div class="card reveal">
@@ -1729,7 +1780,7 @@
 
                         <!-- Overlay superior -->
                         <div class="collage-overlay-top">
-                            <div class="collage-counter-badge" id="collageCounterBadge">01 / 17</div>
+                            <div class="collage-counter-badge" id="collageCounterBadge">01</div>
                             <div class="collage-hint-zoom">
                                 <span>🔍 Toca para ampliar</span>
                             </div>
@@ -1772,7 +1823,7 @@
                 <div class="gallery-intro reveal" style="transition-delay:.4s;">
                     <p
                         style="font-family:'Montserrat',sans-serif;font-size:clamp(0.68rem,1.8vw,0.8rem);letter-spacing:2px;text-transform:uppercase;color:var(--text-soft);font-weight:600;margin-bottom:12px;">
-                        Galería completa de recuerdos (17 fotografías)
+                        Galería completa de recuerdos
                     </p>
                     <div class="gallery-grid" id="galleryGrid">
                         <!-- Se poblará dinámicamente con las 17 fotos de Matt -->
@@ -1869,17 +1920,29 @@
                     "Gracias por aceptar acompañarme y guiarme con amor y fe en este hermoso camino".
                 </p>
 
+                <!-- FOTOGRAFÍA DE LOS PADRINOS -->
+                <div class="padrinos-photo reveal" style="transition-delay:.3s;">
+                    <img src="Imagenes/matt/PADRINOS MATT.jpeg" alt="Padrinos de Bautizo de Matt">
+                </div>
+
                 <div class="padrinos-card reveal" style="transition-delay:.35s;">
                     <span style="font-size:clamp(2.2rem,6vw,3.2rem);display:block;margin-bottom:8px;">🕊️</span>
 
                     <div class="padrino-box">
                         <span class="padrino-badge">Padrino de Bautizo</span>
-                        <p class="padrino-name">Esteban Salazar</p>
+                        <p class="padrino-name">Claudio Ronquillo</p>
                     </div>
 
                     <div class="padrino-box">
                         <span class="padrino-badge">Madrina de Bautizo</span>
-                        <p class="padrino-name">Elvira Perez</p>
+                        <p class="padrino-name">Sara Castro de Ronquillo</p>
+                    </div>
+
+                    <!-- HIJAS DE LOS PADRINOS -->
+                    <div class="padrinos-daughters-box">
+                        <span class="padrinos-daughters-badge">Sus queridas hijas</span>
+                        <p class="padrinos-daughters-name">Grace Ronquillo Castro</p>
+                        <p class="padrinos-daughters-name">Alison Ronquillo Castro</p>
                     </div>
 
                     <div class="divider" style="margin-top:16px;"><span>✦</span></div>
@@ -1908,7 +1971,7 @@
                 </h2>
                 <p class="t-body t-italic reveal" id="cdEventDateLabel"
                     style="transition-delay:.22s; color:var(--celeste-light); font-size:clamp(1.1rem,3.2vw,1.45rem);">
-                    Sábado 21 de Noviembre de 2026 · 14:00 hrs
+                    Sábado 21 de Noviembre de 2026 · 16:00 hrs
                 </p>
 
                 <div class="cd-grid reveal" id="countdownGrid" style="transition-delay:.35s;">
@@ -1955,13 +2018,15 @@
                     <div class="timeline-item">
                         <div class="timeline-icon-node">✝️</div>
                         <div class="timeline-content-card">
-                            <span class="timeline-time-badge">14:00 (2:00 P. M.)</span>
+                            <span class="timeline-time-badge">16:00 (4:00 P. M.)</span>
                             <h3 class="timeline-event-name">Ceremonia de Bautizo</h3>
                             <p class="timeline-event-place">
-                                <strong>Capilla Corazón de Jesús</strong><br>
-                                Alto Següencoma
+                                <strong>Parroquia Sagrado Corazón</strong><br>
+                                2da Meseta de Alto Següencoma<br>
+                                <span style="font-size:0.85em;color:var(--text-soft);">Ref: Frente al Colegio Juan Pablo
+                                    Segundo</span>
                             </p>
-                            <a href="https://maps.app.goo.gl/5iZQS8jrgNoSnXoE8" target="_blank"
+                            <a href="https://maps.app.goo.gl/FTF83YBqJVnBL2v77" target="_blank"
                                 rel="noopener noreferrer" class="btn btn-celeste"
                                 style="font-size:clamp(0.65rem,1.7vw,0.76rem);padding:10px 20px;min-height:42px;">
                                 📍 Ver Ubicación
@@ -1973,13 +2038,15 @@
                     <div class="timeline-item">
                         <div class="timeline-icon-node">🎉</div>
                         <div class="timeline-content-card">
-                            <span class="timeline-time-badge" style="background:var(--gold);">15:00 (3:00 P. M.)</span>
+                            <span class="timeline-time-badge" style="background:var(--gold);">17:00 (5:00 P. M.)</span>
                             <h3 class="timeline-event-name">Reunión Familiar</h3>
                             <p class="timeline-event-place">
-                                <strong>Bajo Següencoma</strong><br>
-                                Referencia: Restaurante El Rinconsito
+                                <strong>Salón de Eventos Litoral</strong><br>
+                                Calle 17 de Obrajes<br>
+                                <span style="font-size:0.85em;color:var(--text-soft);">Para compartir un plato de comida
+                                    y celebrar juntos</span>
                             </p>
-                            <a href="https://maps.app.goo.gl/4BpVeA9jXqYswU56A" target="_blank"
+                            <a href="https://maps.app.goo.gl/xEok56NQvfJL9VNd8" target="_blank"
                                 rel="noopener noreferrer" class="btn btn-celeste"
                                 style="font-size:clamp(0.65rem,1.7vw,0.76rem);padding:10px 20px;min-height:42px;">
                                 📍 Ver Ubicación
@@ -2005,13 +2072,15 @@
                 <div class="card reveal" style="transition-delay:.3s;">
                     <div class="location-box">
                         <span class="location-icon-hero">⛪</span>
-                        <span class="card-badge">14:00 HRS · ALTO SEGÜENCOMA</span>
-                        <h3 class="location-place-title">Capilla Corazón de Jesús</h3>
+                        <span class="card-badge">16:00 HRS · ALTO SEGÜENCOMA</span>
+                        <h3 class="location-place-title">Parroquia Sagrado Corazón</h3>
                         <p class="location-place-desc">
+                            <strong>Dirección:</strong> 2da Meseta de Alto Següencoma.<br>
+                            <strong>Referencia:</strong> Frente al Colegio Juan Pablo Segundo.<br>
                             Acompáñanos a presenciar el sagrado momento en que Matt recibirá el sacramento del bautismo
                             y la bendición de Dios.
                         </p>
-                        <a href="https://maps.app.goo.gl/5iZQS8jrgNoSnXoE8" target="_blank" rel="noopener noreferrer"
+                        <a href="https://maps.app.goo.gl/FTF83YBqJVnBL2v77" target="_blank" rel="noopener noreferrer"
                             class="btn btn-celeste">
                             📍 Ver Ubicación en Google Maps
                         </a>
@@ -2027,7 +2096,7 @@
         <section class="section" id="s10-reunion">
             <div class="wrap">
                 <span class="t-tag reveal">Compartir en familia</span>
-                <h2 class="t-h1 reveal" style="transition-delay:.1s;">Reunión Familiar</h2>
+                <h2 class="t-h1 reveal" style="transition-delay:.1s;">Reunión de Familia y Amigos</h2>
                 <div class="divider reveal" style="transition-delay:.2s;"><span>✦ 🥂 ✦</span></div>
 
                 <div class="card reveal" style="transition-delay:.3s;">
@@ -2041,7 +2110,7 @@
                     <div class="divider"><span>✦</span></div>
                     <p
                         style="font-family:'Montserrat',sans-serif;font-size:clamp(0.7rem,1.9vw,0.84rem);letter-spacing:2.5px;text-transform:uppercase;color:var(--azul-cielo);font-weight:700;">
-                        ¡Tu presencia llenará de felicidad el corazón de Matt!
+                        Los esperamos para compartir un plato de comida y celebrar con mucho amor.
                     </p>
                 </div>
             </div>
@@ -2063,15 +2132,15 @@
                         <span class="location-icon-hero">🍽️</span>
                         <span class="card-badge"
                             style="background:#FFF8E7;color:var(--gold);border-color:rgba(197,155,75,0.4);">
-                            15:00 HRS · BAJO SEGÜENCOMA
+                            17:00 HRS · CALLE 17 DE OBRAJES
                         </span>
-                        <h3 class="location-place-title">Restaurante El Rinconsito</h3>
+                        <h3 class="location-place-title">Salón de Eventos Litoral</h3>
                         <p class="location-place-desc">
-                            <strong>Zona:</strong> Bajo Següencoma.<br>
-                            <strong>Referencia:</strong> Restaurante El Rinconsito.<br>
-                            Los esperamos para brindar y compartir una tarde maravillosa.
+                            <strong>Ubicación:</strong> Calle 17 de Obrajes.<br>
+                            Los esperamos a las 17:00 hrs para compartir un delicioso plato de comida y disfrutar juntos
+                            de una tarde inolvidable.
                         </p>
-                        <a href="https://maps.app.goo.gl/4BpVeA9jXqYswU56A" target="_blank" rel="noopener noreferrer"
+                        <a href="https://maps.app.goo.gl/xEok56NQvfJL9VNd8" target="_blank" rel="noopener noreferrer"
                             class="btn btn-celeste">
                             📍 Ver Ubicación en Google Maps
                         </a>
@@ -2160,9 +2229,8 @@
 
     <!-- ELEMENTO DE AUDIO DE FONDO -->
     <audio id="bgMusic" loop preload="auto">
-        <source src="Sonido/Baby_Lullaby_-_A_Thousand_Years_Instrumental_Version_(mp3.pm).aac" type="audio/aac">
-        <source src="Sonido/Baby_Lullaby_-_A_Thousand_Years_Instrumental_Version_(mp3.pm).aac" type="audio/mp4">
-        <source src="Sonido/Baby_Lullaby_-_A_Thousand_Years_Instrumental_Version_(mp3.pm).aac" type="audio/x-m4a">
+        <source src="Sonido/Padre Nuestro.mp3" type="audio/mpeg">
+        <source src="Sonido/Padre%20Nuestro.mp3" type="audio/mpeg">
     </audio>
 
     <!-- BOTÓN FLOTANTE DE MÚSICA -->
@@ -2186,7 +2254,7 @@
 
             <div class="lightbox-caption-bar">
                 <div class="lightbox-caption-title" id="lightboxTitle">Título</div>
-                <div class="lightbox-caption-num" id="lightboxNum">1 de 17</div>
+                <div class="lightbox-caption-num" id="lightboxNum"></div>
             </div>
         </div>
     </div>
@@ -2279,9 +2347,34 @@
                 sub: 'Creando hermosos recuerdos'
             },
             {
-                src: 'Imagenes/matt/Matt grande.jpg',
+                src: 'Imagenes/matt/matt gorra.jpeg',
                 title: 'Matt — 9 años de bendiciones',
                 sub: 'Un niño noble, alegre y amado'
+            },
+            {
+                src: 'Imagenes/matt/PADRINOS MATT.jpeg',
+                title: 'Mis Padrinos',
+                sub: 'Guías de fe, amor y bendición'
+            },
+            {
+                src: 'Imagenes/matt/famili mat2.jpeg',
+                title: 'Amor familiar infinito',
+                sub: 'Unidos siempre con alegría'
+            },
+            {
+                src: 'Imagenes/matt/mateus.jpeg',
+                title: 'Sonrisas que iluminan',
+                sub: 'La felicidad de crecer juntos'
+            },
+            {
+                src: 'Imagenes/matt/matt y mama3.jpeg',
+                title: 'Abrazo de amor',
+                sub: 'Ternura compartida con mamá'
+            },
+            {
+                src: 'Imagenes/matt/Matt grande.jpg',
+                title: 'Matt — 9 años',
+                sub: 'Creciendo con la gracia de Dios'
             }
         ];
 
@@ -2568,9 +2661,9 @@
 
         /* ══════════════════════════════════════════════════════════════
            6. CUENTA REGRESIVA AL BAUTIZO DE MATT
-           Fecha: Sábado 21 de Noviembre de 2026 a las 14:00 (2:00 PM)
+           Fecha: Sábado 21 de Noviembre de 2026 a las 16:00 (4:00 PM)
         ══════════════════════════════════════════════════════════════ */
-        var targetBaptismDate = new Date(2026, 10, 21, 14, 0, 0).getTime(); // Mes 10 = Noviembre (0-indexed)
+        var targetBaptismDate = new Date(2026, 10, 21, 16, 0, 0).getTime(); // Mes 10 = Noviembre (0-indexed)
 
         function updateCountdown() {
             var now = Date.now();
